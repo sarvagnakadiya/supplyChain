@@ -1,0 +1,107 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "_address",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_sm_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_description",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_unit",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_price",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_date",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_expiryDate",
+						"type": "bytes"
+					}
+				],
+				"name": "addManufacturerProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Interfaces/IManufacturerProduct.sol": "IManProduct"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/IManufacturerProduct.sol": {
+			"keccak256": "0x25cb674dcc5a50b145912a21e3b4d5817624537a5d3f8b83490205fc36e137d9",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://988b07e11099438b6829d903b90d0c1ae079240e7005848184267813c1c7cd16",
+				"dweb:/ipfs/QmZfjgVbgrgZZufuk7yxeNS73Q4iyFQcVXFk2wGYwSHAVp"
+			]
+		}
+	},
+	"version": 1
+}

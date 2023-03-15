@@ -1,0 +1,125 @@
+{
+	"compiler": {
+		"version": "0.8.1+commit.df193b15"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_type",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_address",
+						"type": "bytes"
+					}
+				],
+				"name": "deleteUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					}
+				],
+				"name": "editImage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					}
+				],
+				"name": "editName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "editPhysicalAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ISupplier.sol": "Iuser"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ISupplier.sol": {
+			"keccak256": "0xaf26b89ff53846eac858efef3cbc3ae49a481109ab5df14c4b0910977bb01574",
+			"urls": [
+				"bzz-raw://9efcdad9a587bfe260c0a42b51290f84a77a56d9506e418a6cb618d7e7baa64e",
+				"dweb:/ipfs/QmPqT6McKHQwSZ91ie4dLpKzJH4jJLkBqLUfntVzvEgFNd"
+			]
+		}
+	},
+	"version": 1
+}

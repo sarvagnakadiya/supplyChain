@@ -1,0 +1,126 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_type",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_address",
+						"type": "bytes"
+					}
+				],
+				"name": "deleteUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					}
+				],
+				"name": "editImage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					}
+				],
+				"name": "editName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "editPhysicalAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Interfaces/IUserDetails.sol": "IUserDetails"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/IUserDetails.sol": {
+			"keccak256": "0x6fa8b5a3d78efe9b076fa4f138dc150fdc4f306eb85b3fd564c7f1089b688966",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://404851daf13f0afe93351ca76fd299f76e298a086770c9824330a8a8da68768e",
+				"dweb:/ipfs/Qmaxsz9Lna82NVeydiKy27kxZaok4AjyJh8faiu3hrQFSP"
+			]
+		}
+	},
+	"version": 1
+}

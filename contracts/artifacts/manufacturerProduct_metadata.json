@@ -1,0 +1,257 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "_supplierAddress",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "_sm_id",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_description",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_unit",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_price",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_date",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_expiryDate",
+						"type": "bytes"
+					}
+				],
+				"name": "addManufacturerProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "addressToproductsIdMapping",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getManufacturerProducts",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getProduct",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address[]",
+								"name": "supplierAddress",
+								"type": "address[]"
+							},
+							{
+								"internalType": "bytes[]",
+								"name": "sm_id",
+								"type": "bytes[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "mp_name",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "mp_description",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "mp_unit",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "mp_price",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "mp_date",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "mp_expiryDate",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IManufacturerProduct.manufacturerProduct",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "productsIdMappingToStructMapping",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "mp_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "mp_description",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "mp_unit",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "mp_price",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "mp_date",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "mp_expiryDate",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/manufacturerProduct.sol": "manufacturerProduct"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/IManufacturerProduct.sol": {
+			"keccak256": "0x438e65206aa589212d3e1ffed916fbd5b15f6b1d240be07ede1540d84d9478b3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d26634b2f529b2acc6ec9be3cf7271c8c8fc815fc986c82fc76db3cd99bfa1cd",
+				"dweb:/ipfs/QmXQqm9bomYJLXpqW57QUfXAHqfK8vMZDnGqd864CudF2Y"
+			]
+		},
+		"contracts/manufacturerProduct.sol": {
+			"keccak256": "0xbfa359949f5d51f7f156e0487a778969e889c885af38f05f2d0d130a848292d6",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6c6ad4a03e7e3730c593d4371fcce30dcbc1334e1c2d5c4788009824e1a96972",
+				"dweb:/ipfs/QmZQoiD2o5ZVC6ahbn863cMYsj67k5BRYJ63eDkaXYV9zK"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_sm_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_sp_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_s_address",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_m_address",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_dispatchTime",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_arrivalTime",
+						"type": "bytes"
+					}
+				],
+				"name": "addData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ISupplierManufacturer.sol": "ISupplierMan"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ISupplierManufacturer.sol": {
+			"keccak256": "0x5faab436ada77e2b1087758a9d4f33be008f21fc9616626033ba213710bd1dfb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f2d0aecd32b6a42a82a8a1fcc62e76ab41d013af55b5b84a11e0f0d3b071e336",
+				"dweb:/ipfs/QmV3THWDxBYe7vdnQDKuuJK9BVsL4YuR2jiD97gUVH9VRD"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,139 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"addUser(bytes,bytes,bytes,bytes)": "9dfd240a",
+			"deleteUser(bytes)": "30e84d5f",
+			"editImage(bytes)": "d1bab143",
+			"editName(bytes)": "0c6c92ba",
+			"editPhysicalAddress(bytes)": "6a26d064"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_type",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "_name",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "_physicalAddress",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "_image",
+					"type": "bytes"
+				}
+			],
+			"name": "addUser",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_address",
+					"type": "bytes"
+				}
+			],
+			"name": "deleteUser",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_image",
+					"type": "bytes"
+				}
+			],
+			"name": "editImage",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_name",
+					"type": "bytes"
+				}
+			],
+			"name": "editName",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "_physicalAddress",
+					"type": "bytes"
+				}
+			],
+			"name": "editPhysicalAddress",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}
