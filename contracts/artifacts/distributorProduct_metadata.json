@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -8,34 +8,160 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "_sp_id",
-						"type": "bytes"
-					},
-					{
-						"internalType": "address",
-						"name": "_supplierAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
+						"internalType": "address[]",
 						"name": "_manufacturerAddress",
-						"type": "address"
+						"type": "address[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "_md_id",
+						"type": "bytes[]"
 					},
 					{
 						"internalType": "bytes",
-						"name": "_dispatchTime",
+						"name": "_name",
 						"type": "bytes"
 					},
 					{
 						"internalType": "bytes",
-						"name": "_arrivalTime",
+						"name": "_description",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_unit",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_price",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_date",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_expiryDate",
 						"type": "bytes"
 					}
 				],
-				"name": "addData",
+				"name": "addDistributorProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "addressToproductsIdMapping",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDistributorProducts",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getProduct",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address[]",
+								"name": "manufacturerAddress",
+								"type": "address[]"
+							},
+							{
+								"internalType": "bytes[]",
+								"name": "md_id",
+								"type": "bytes[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_name",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_description",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_unit",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_price",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_date",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_expiryDate",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IDistributorProduct.distributorProduct",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -46,31 +172,36 @@
 						"type": "uint256"
 					}
 				],
-				"name": "smidToStructMapping",
+				"name": "productsIdMappingToStructMapping",
 				"outputs": [
 					{
 						"internalType": "bytes",
-						"name": "sp_id",
-						"type": "bytes"
-					},
-					{
-						"internalType": "address",
-						"name": "supplierAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "manufacturerAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "bytes",
-						"name": "dispatchTime",
+						"name": "dp_name",
 						"type": "bytes"
 					},
 					{
 						"internalType": "bytes",
-						"name": "arrivalTime",
+						"name": "dp_description",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dp_unit",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dp_price",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dp_date",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dp_expiryDate",
 						"type": "bytes"
 					}
 				],
@@ -91,9 +222,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/supplierManufacturer.sol": "distributorProduct"
+			"contracts/distributorProduct.sol": "distributorProduct"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -105,20 +236,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x09bbf89f845f96184c12aa2028aa84ea1b6a75d9e7a5dc1fecdeee52a5bdd342",
+		"contracts/Interfaces/IDistributorProduct.sol": {
+			"keccak256": "0x45aa00ab07cf793fbe851400f7344d61aa766dfe65487e711016fa3a4aac8f38",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f49b79ee1efcb87ea80c0bc0f77c32bad9e006e5609f2dec5800249013c0e2d4",
-				"dweb:/ipfs/QmWkkHvACDvbiN4cK766XUjcWG2YxQoujc7KK8ZF1bEeZk"
+				"bzz-raw://8e02bd601cefb63eb1402403635251ad198b7ed3c2e1d4e1fdc80f1583fd4204",
+				"dweb:/ipfs/QmaTVcvTcNKDHXuGA19k6yFG6rfPoAyNZriyVvBSeCwi4L"
 			]
 		},
-		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0x379867e24b58bd284b5294aa9dce5b97233deddbca0a6b98f6a73a5369ccb737",
+		"contracts/distributorProduct.sol": {
+			"keccak256": "0xea507a21cdf47f446d53872fb4a145a3798f8ae2cf3762854558e5e37d885a40",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0cddbbfd5907245526cf5a4ac7d152289f51c3424f51efe0a1bdabb6587a3f34",
-				"dweb:/ipfs/QmQNtu3arMC4fHowPqU6Vmc5EKb6Wv68gaar25D8PpdtHA"
+				"bzz-raw://9d6709e06ca707ff35f3716d56b12110a4589757919905658f494ccccf5a60f5",
+				"dweb:/ipfs/QmWeJh1iMUNvqrgL47myAkx2rk6QQ6M2Lzd7QH5Kx6FM2V"
 			]
 		}
 	},

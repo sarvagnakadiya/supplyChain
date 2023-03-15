@@ -8,9 +8,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
+						"internalType": "enum IUserDetails.userType",
 						"name": "_type",
-						"type": "bytes"
+						"type": "uint8"
 					},
 					{
 						"internalType": "bytes",
@@ -36,14 +36,33 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
+						"internalType": "address",
 						"name": "_address",
-						"type": "bytes"
+						"type": "address"
 					}
 				],
 				"name": "deleteUser",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "distributors",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -86,6 +105,184 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getAllDistributors",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IUserDetails.userType",
+								"name": "userType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userName",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userPhysicalAddress",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userImage",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IUserDetails.userDetails[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllManufacturers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IUserDetails.userType",
+								"name": "userType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userName",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userPhysicalAddress",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userImage",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IUserDetails.userDetails[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllSuppliers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IUserDetails.userType",
+								"name": "userType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userName",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userPhysicalAddress",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userImage",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IUserDetails.userDetails[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllUsers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IUserDetails.userType",
+								"name": "userType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userName",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userPhysicalAddress",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userImage",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IUserDetails.userDetails[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "manufacturers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "suppliers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -96,9 +293,9 @@
 				"name": "userDetailsMapping",
 				"outputs": [
 					{
-						"internalType": "bytes",
+						"internalType": "enum IUserDetails.userType",
 						"name": "userType",
-						"type": "bytes"
+						"type": "uint8"
 					},
 					{
 						"internalType": "bytes",
@@ -114,6 +311,25 @@
 						"internalType": "bytes",
 						"name": "userImage",
 						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -148,19 +364,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IUserDetails.sol": {
-			"keccak256": "0x6fa8b5a3d78efe9b076fa4f138dc150fdc4f306eb85b3fd564c7f1089b688966",
+			"keccak256": "0x3ecf79e25d9f0971044ed92876ae99d155a761b3898f49b96b034b638e0faafe",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://404851daf13f0afe93351ca76fd299f76e298a086770c9824330a8a8da68768e",
-				"dweb:/ipfs/Qmaxsz9Lna82NVeydiKy27kxZaok4AjyJh8faiu3hrQFSP"
+				"bzz-raw://d2b1eb3edf1edeb40046e17b5396756d04185bf48f7c3088733f9b0a708b007c",
+				"dweb:/ipfs/QmSk82xGjiCL1xZL8KYMsZJZ6nmpDTNHQfqkhzZgyVgVSq"
 			]
 		},
 		"contracts/userDetails.sol": {
-			"keccak256": "0xe24f5a0da7229ce61609c8fecff887cec67fd6a3976b9ea675b0ca75eef4c7e4",
+			"keccak256": "0x19874633c81e84667a4c0f232809efd9c18afe40d61f3a7e0a38fcb9ecf047da",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://696cdcf5b5ff1aa8bc1b26bcc472ff73f27dafdb5b57f71ebefb9b79e48cf130",
-				"dweb:/ipfs/QmTGEzyUfoDoz3V5gfa9w5P5G5w4dtAxznxPX89ANXsZmM"
+				"bzz-raw://230fecbe61b0409923f3eca25b4b8759d41659550725b4454b3ed9ab4b812eae",
+				"dweb:/ipfs/QmfNpoetBXnMjfDZD3wtY6abuM2KjYULNLsX2bFGdbH3rj"
 			]
 		}
 	},
