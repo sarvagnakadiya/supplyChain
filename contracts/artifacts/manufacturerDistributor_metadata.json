@@ -1,0 +1,185 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_mp_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "_manufacturerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_distributorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_dispatchTime",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_arrivalTime",
+						"type": "bytes"
+					}
+				],
+				"name": "addData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mdid",
+						"type": "uint256"
+					}
+				],
+				"name": "getData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "mp_id",
+								"type": "bytes"
+							},
+							{
+								"internalType": "address",
+								"name": "m_address",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "d_address",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dispatchTime",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "arrivalTime",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IManufacturerDistributor.manufacturerDistributor",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "mdidToStructMapping",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "mp_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "m_address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "d_address",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dispatchTime",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "arrivalTime",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "transferCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/manufacturerDistributor.sol": "manufacturerDistributor"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Interfaces/IManufacturerDistributor.sol": {
+			"keccak256": "0x6dcf95490b31b67eb40a5cc077f4c052749a54381e798e8602eab2f9ddbc3e43",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3f890b5be1f4341b78ecb0bf091ff9bb6fa76d912f6786f2da81a8cc378a7e69",
+				"dweb:/ipfs/QmVFmyusRwUTdUkXxcUkz8i7itLN5Ad2T3cCwExq16NHdw"
+			]
+		},
+		"contracts/manufacturerDistributor.sol": {
+			"keccak256": "0x8ae57e22476176b8338b2b4a6bea994201bd34842bdccd02568142165042fee9",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://613327527d7086d58daf0507ca26972299c8c18cc1f30a6a9c00b6af87263386",
+				"dweb:/ipfs/Qmc1WkHekujNEQDn81dt8nRo9EJcTm93mCVBw8hMPkDzHd"
+			]
+		}
+	},
+	"version": 1
+}

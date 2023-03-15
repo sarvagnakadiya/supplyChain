@@ -42,6 +42,52 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_smid",
+						"type": "uint256"
+					}
+				],
+				"name": "getData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "sp_id",
+								"type": "bytes"
+							},
+							{
+								"internalType": "address",
+								"name": "supplierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "manufacturerAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dispatchTime",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "arrivalTime",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct ISupplierManufacturer.supplierManufacturer",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -76,6 +122,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "transferCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -91,7 +150,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/supplierManufacturer.sol": "distributorProduct"
+			"contracts/supplierManufacturer.sol": "supplierManufacturer"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -114,11 +173,11 @@
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0x379867e24b58bd284b5294aa9dce5b97233deddbca0a6b98f6a73a5369ccb737",
+			"keccak256": "0x0726bf3283ad1de354f2498b449efafabeb32be7ea53824dc63af114a2897beb",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0cddbbfd5907245526cf5a4ac7d152289f51c3424f51efe0a1bdabb6587a3f34",
-				"dweb:/ipfs/QmQNtu3arMC4fHowPqU6Vmc5EKb6Wv68gaar25D8PpdtHA"
+				"bzz-raw://f4db52bea2529dd124fc708421b46a5fc284be1905b63ada7d86893597b6332d",
+				"dweb:/ipfs/QmTQQx5FKDPJLewGzigEmfGPRARUMEDsBAMyKrxvi9qd7D"
 			]
 		}
 	},

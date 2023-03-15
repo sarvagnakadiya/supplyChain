@@ -8,16 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes[]",
-						"name": "_address",
-						"type": "bytes[]"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_md_id",
-						"type": "bytes"
-					},
-					{
 						"internalType": "bytes",
 						"name": "_name",
 						"type": "bytes"
@@ -48,7 +38,7 @@
 						"type": "bytes"
 					}
 				],
-				"name": "addDistributorProduct",
+				"name": "addSupplierProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -80,7 +70,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Interfaces/IDistributorProduct.sol": "ISupplierProduct"
+			"contracts/Interfaces/ISupplierProduct.sol": "ISupplierProduct"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -94,12 +84,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Interfaces/IDistributorProduct.sol": {
-			"keccak256": "0x8a5e24c8beb46b9d1e69b66e9e435bf76509138237b1b457bbcf999543da694e",
+		"contracts/Interfaces/ISupplierProduct.sol": {
+			"keccak256": "0x42af901c925c81348599f9ed8c348558eb9acde878627079fe8d58c415137428",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://768d957c98756639d7dce302566f92b566452e153319535cfba7b3ecefb7df32",
-				"dweb:/ipfs/QmU5d6qqwib2ZGLhYBnUwq4WsUJ4WF2zgy9DTyT55mehUn"
+				"bzz-raw://227e01f157a17e0c853a87209371d77c317b7c18ef8ad37e718bf5d7a2edd603",
+				"dweb:/ipfs/QmT9pJcFwumXiVMP1uWbT8ixsxRnqy85UE5U49rw85S4Vo"
 			]
 		}
 	},

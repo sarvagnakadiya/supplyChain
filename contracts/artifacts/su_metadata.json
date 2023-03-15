@@ -91,7 +91,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/supplierManufacturer.sol": "distributorProduct"
+			"contracts/supplierManufacturer.sol": "su"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -114,11 +114,11 @@
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0x379867e24b58bd284b5294aa9dce5b97233deddbca0a6b98f6a73a5369ccb737",
+			"keccak256": "0x99229572ebf02017077c35941a1621107f21feffca1d9dd5d894a0c98ef740de",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0cddbbfd5907245526cf5a4ac7d152289f51c3424f51efe0a1bdabb6587a3f34",
-				"dweb:/ipfs/QmQNtu3arMC4fHowPqU6Vmc5EKb6Wv68gaar25D8PpdtHA"
+				"bzz-raw://36ec1bfed1f4625a0bc6917dac8306f73e7e60fc7c90d5626c6ea554ddc4e5db",
+				"dweb:/ipfs/QmWoF4tLUksm4AbR2GNfjdnk7oReR279Ywjjrkh2mpcCuc"
 			]
 		}
 	},

@@ -57,17 +57,17 @@
 			"inputs": [
 				{
 					"internalType": "bytes",
-					"name": "_sp_id",
+					"name": "_mp_id",
 					"type": "bytes"
 				},
 				{
 					"internalType": "address",
-					"name": "_supplierAddress",
+					"name": "_manufacturerAddress",
 					"type": "address"
 				},
 				{
 					"internalType": "address",
-					"name": "_manufacturerAddress",
+					"name": "_distributorAddress",
 					"type": "address"
 				},
 				{

@@ -49,23 +49,13 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"addDistributorProduct(bytes[],bytes,bytes,bytes,bytes,bytes,bytes,bytes)": "7f487d24",
+			"addSupplierProduct(bytes,bytes,bytes,bytes,bytes,bytes)": "f4a8dbf9",
 			"deleteProduct(uint256)": "ed90c7b7"
 		}
 	},
 	"abi": [
 		{
 			"inputs": [
-				{
-					"internalType": "bytes[]",
-					"name": "_address",
-					"type": "bytes[]"
-				},
-				{
-					"internalType": "bytes",
-					"name": "_md_id",
-					"type": "bytes"
-				},
 				{
 					"internalType": "bytes",
 					"name": "_name",
@@ -97,7 +87,7 @@
 					"type": "bytes"
 				}
 			],
-			"name": "addDistributorProduct",
+			"name": "addSupplierProduct",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"
