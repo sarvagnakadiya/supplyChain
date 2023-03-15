@@ -1,10 +1,125 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_type",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_address",
+						"type": "bytes"
+					}
+				],
+				"name": "deleteUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					}
+				],
+				"name": "editImage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					}
+				],
+				"name": "editName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "editPhysicalAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userDetailsMapping",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "userType",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userName",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userPhysicalAddress",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userImage",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -20,7 +135,7 @@
 		"compilationTarget": {
 			"contracts/userDetails.sol": "userDetails"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -41,11 +156,11 @@
 			]
 		},
 		"contracts/userDetails.sol": {
-			"keccak256": "0x4803cba2a6d57557af585bae193c622be8fa2c7c9c3f9dbf8a1122d57c8b330f",
+			"keccak256": "0xe24f5a0da7229ce61609c8fecff887cec67fd6a3976b9ea675b0ca75eef4c7e4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a939cd48275f83c2c9e6844aa3d572afbbbd08700fef779151524ff59ad0483d",
-				"dweb:/ipfs/QmVwj6uongdU7r1xRkoMziS6LYZXx8n2WYkVLCVbhTBKmn"
+				"bzz-raw://696cdcf5b5ff1aa8bc1b26bcc472ff73f27dafdb5b57f71ebefb9b79e48cf130",
+				"dweb:/ipfs/QmTGEzyUfoDoz3V5gfa9w5P5G5w4dtAxznxPX89ANXsZmM"
 			]
 		}
 	},
