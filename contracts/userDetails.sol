@@ -25,6 +25,7 @@ contract userDetails is IUserDetails{
 
     }
     function deleteUser(address _address)public{
+        require((userDetailsMapping[msg.sender].userName).length == 0, "User not present");
         delete userDetailsMapping[_address];
 
     }
@@ -39,6 +40,10 @@ contract userDetails is IUserDetails{
     }
     function editImage(bytes memory _image)public{
         userDetailsMapping[msg.sender].userImage = _image;
+    }
+
+    function getSingleUser(address _address) public view returns(userDetails memory){
+        return userDetailsMapping[_address];
     }
 
     function getAllUsers() public view returns(userDetails[] memory){

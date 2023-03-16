@@ -83,12 +83,68 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_supplierAddress",
+						"type": "address"
+					}
+				],
+				"name": "getAllProductsOfSupplier",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "supplierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_name",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_description",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_unit",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_price",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_date",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_expiryDate",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct ISupplierProduct.supplierProduct[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
 					}
 				],
-				"name": "getProduct",
+				"name": "getSingleProduct",
 				"outputs": [
 					{
 						"components": [
@@ -138,7 +194,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "getSupplierProducts",
+				"name": "getSupplierProductIds",
 				"outputs": [
 					{
 						"internalType": "uint256[]",
@@ -235,11 +291,11 @@
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0x2474e844709653a5224cc7a6f4a1b31ba25128f20fa3c16adda422339a3a8cc0",
+			"keccak256": "0xf2fb8419ac1de3a0762e6e86b14dda85b6dfc48435096818766e7a5c0e2b91c8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4bac3413a1d8f991a69d6625f380c3b3915ed22bbe420a60d351a5383809c4c2",
-				"dweb:/ipfs/QmNquWJJYzuknfULSKvsEMDccpfikVG447WwpiudAPtAbE"
+				"bzz-raw://a18acd535d07e0de0b1243877d3041e13d49a33e94802f70e0b5ca19b59862a0",
+				"dweb:/ipfs/Qme6hDbccZSqXqDQgCyNJZabPH48zM11y9okV7e3P6UHJk"
 			]
 		}
 	},

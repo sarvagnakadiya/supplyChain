@@ -247,6 +247,47 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getSingleUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IUserDetails.userType",
+								"name": "userType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userName",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userPhysicalAddress",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userImage",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IUserDetails.userDetails",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -372,11 +413,11 @@
 			]
 		},
 		"contracts/userDetails.sol": {
-			"keccak256": "0x19874633c81e84667a4c0f232809efd9c18afe40d61f3a7e0a38fcb9ecf047da",
+			"keccak256": "0xdca78c5018908940c4ada16bac8e496da0d9f770a48f2a2a9d02a7d2c66eb0db",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://230fecbe61b0409923f3eca25b4b8759d41659550725b4454b3ed9ab4b812eae",
-				"dweb:/ipfs/QmfNpoetBXnMjfDZD3wtY6abuM2KjYULNLsX2bFGdbH3rj"
+				"bzz-raw://f6f9bb4a3537735322d8f19e9126f19f2905ddc6197c1d78fadcbaf8d76b0c85",
+				"dweb:/ipfs/QmZbhyMVJLPmCwzBrhmFL1dzfg5ZNgdnU2835TWfGvXcDn"
 			]
 		}
 	},
