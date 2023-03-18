@@ -2,21 +2,40 @@
 import "./Interfaces/IManufacturerDistributor.sol";
 pragma solidity >=0.8.0 <=0.8.19;
 contract manufacturerDistributor is IManufacturerDistributor{
-    uint public transferCounter = 1;
+    uint public mdId = 1;
     uint[] alltransfers;
 
-    //   bytes sp_id;
-    //   address supplierAddress;
-    //   address manufacturerAddress;
+    //   bytes _mp_id;
+    //   address _manufacturerAddress;
+    //   address _distributorAddress;
     //   bytes dispatchTime;
     //   bytes arrivalTime;
 
     mapping(uint => manufacturerDistributor) public mdidToStructMapping;
-    function addData(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external override{
-        mdidToStructMapping[transferCounter] = manufacturerDistributor(_mp_id,_manufacturerAddress,_distributorAddress,_dispatchTime,_arrivalTime);
-        transferCounter++;
+    mapping(address => uint[]) public distributorTosmIDMapping;
+
+    function transferproduct(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external override{
+        mdidToStructMapping[mdId] = manufacturerDistributor(_mp_id,_manufacturerAddress,_distributorAddress,_dispatchTime,_arrivalTime);
+        distributorTosmIDMapping[_distributorAddress].push(mdId);
+        mdId++;
     } 
-    function getData(uint _mdid) public view returns(manufacturerDistributor memory){
+
+    function receiveProduct(uint _mdId, bytes memory _arrivalTime)external override{
+        mdidToStructMapping[_mdId].arrivalTime = _arrivalTime;
+        
+    } 
+    function getProduct(uint _mdid) public view returns(manufacturerDistributor memory){
         return mdidToStructMapping[_mdid];
+    }
+
+      function getAllmdIdForManufacturer(address _distributorAddress) public view returns(manufacturerDistributor[] memory){
+        
+        uint[] memory mdIdData = distributorTosmIDMapping[_distributorAddress];
+        manufacturerDistributor[] memory mdIdDetails = new manufacturerDistributor[](mdIdData.length);
+        for(uint i=0;i<mdIdData.length;i++)
+        {
+            mdIdDetails[i] = mdidToStructMapping[mdIdData[i]];
+        }
+        return mdIdDetails;
     }
 }

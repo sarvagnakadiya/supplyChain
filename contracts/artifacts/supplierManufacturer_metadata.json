@@ -8,45 +8,58 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "_sp_id",
-						"type": "bytes"
-					},
-					{
-						"internalType": "address",
-						"name": "_supplierAddress",
-						"type": "address"
-					},
-					{
 						"internalType": "address",
 						"name": "_manufacturerAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_dispatchTime",
-						"type": "bytes"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_arrivalTime",
-						"type": "bytes"
 					}
 				],
-				"name": "addData",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"name": "getAllSmIdForManufacturer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "sp_id",
+								"type": "bytes"
+							},
+							{
+								"internalType": "address",
+								"name": "supplierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "manufacturerAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dispatchTime",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "arrivalTime",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct ISupplierManufacturer.supplierManufacturer[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_smid",
+						"name": "_smId",
 						"type": "uint256"
 					}
 				],
-				"name": "getData",
+				"name": "getProduct",
 				"outputs": [
 					{
 						"components": [
@@ -79,6 +92,61 @@
 						"internalType": "struct ISupplierManufacturer.supplierManufacturer",
 						"name": "",
 						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "manufacturerTosmIDMapping",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_smId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_arrivalTime",
+						"type": "bytes"
+					}
+				],
+				"name": "receiveProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "smId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -124,16 +192,36 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "transferCounter",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "bytes",
+						"name": "_sp_id",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "_supplierAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_manufacturerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_dispatchTime",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_arrivalTime",
+						"type": "bytes"
 					}
 				],
-				"stateMutability": "view",
+				"name": "transferProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -165,19 +253,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x09bbf89f845f96184c12aa2028aa84ea1b6a75d9e7a5dc1fecdeee52a5bdd342",
+			"keccak256": "0x0e7b426f89e04a7d4c56bf41a446e04aeb1640b5986a0dd70a83bef4cab06979",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f49b79ee1efcb87ea80c0bc0f77c32bad9e006e5609f2dec5800249013c0e2d4",
-				"dweb:/ipfs/QmWkkHvACDvbiN4cK766XUjcWG2YxQoujc7KK8ZF1bEeZk"
+				"bzz-raw://f936393ec9c86f77b90b121ee5255fb1ed1384f177bac53d68697d075d971925",
+				"dweb:/ipfs/QmRHSGoph1m6VPAxGWAg6RdGFS97tEj8Pt3uGNRUKrdGmT"
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0x0726bf3283ad1de354f2498b449efafabeb32be7ea53824dc63af114a2897beb",
+			"keccak256": "0x545ad7a9fb1337bc7687ab5f22800a0f4a1ee8c2a843a18000a3123fa74ffa38",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f4db52bea2529dd124fc708421b46a5fc284be1905b63ada7d86893597b6332d",
-				"dweb:/ipfs/QmTQQx5FKDPJLewGzigEmfGPRARUMEDsBAMyKrxvi9qd7D"
+				"bzz-raw://ae38797a1f2effd960d3dfe5a1afe40c34b73c5abc620cbbba62325fbcf5a4e4",
+				"dweb:/ipfs/QmdGrX5jZHRKRuzBNqrxxqfQVTQiee5ynTkTrCvKSpGPLV"
 			]
 		}
 	},

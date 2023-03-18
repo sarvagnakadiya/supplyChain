@@ -1,10 +1,28 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "smId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_arrivalTime",
+						"type": "bytes"
+					}
+				],
+				"name": "receiveProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
 			{
 				"inputs": [
 					{
@@ -33,7 +51,7 @@
 						"type": "bytes"
 					}
 				],
-				"name": "addData",
+				"name": "transferProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -54,7 +72,7 @@
 		"compilationTarget": {
 			"contracts/Interfaces/ISupplierManufacturer.sol": "ISupplierManufacturer"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -67,11 +85,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x09bbf89f845f96184c12aa2028aa84ea1b6a75d9e7a5dc1fecdeee52a5bdd342",
+			"keccak256": "0x0e7b426f89e04a7d4c56bf41a446e04aeb1640b5986a0dd70a83bef4cab06979",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f49b79ee1efcb87ea80c0bc0f77c32bad9e006e5609f2dec5800249013c0e2d4",
-				"dweb:/ipfs/QmWkkHvACDvbiN4cK766XUjcWG2YxQoujc7KK8ZF1bEeZk"
+				"bzz-raw://f936393ec9c86f77b90b121ee5255fb1ed1384f177bac53d68697d075d971925",
+				"dweb:/ipfs/QmRHSGoph1m6VPAxGWAg6RdGFS97tEj8Pt3uGNRUKrdGmT"
 			]
 		}
 	},

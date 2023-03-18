@@ -91,8 +91,69 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "getAllProductsOfDistributor",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address[]",
+								"name": "manufacturerAddress",
+								"type": "address[]"
+							},
+							{
+								"internalType": "bytes[]",
+								"name": "md_id",
+								"type": "bytes[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_name",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_description",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_unit",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_price",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_date",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "dp_expiryDate",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IDistributorProduct.distributorProduct[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "getDistributorProducts",
+				"name": "getDistributorProductIds",
 				"outputs": [
 					{
 						"internalType": "uint256[]",
@@ -111,7 +172,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getProduct",
+				"name": "getSingleProduct",
 				"outputs": [
 					{
 						"components": [
@@ -245,11 +306,11 @@
 			]
 		},
 		"contracts/distributorProduct.sol": {
-			"keccak256": "0xea507a21cdf47f446d53872fb4a145a3798f8ae2cf3762854558e5e37d885a40",
+			"keccak256": "0xd9e9a500c65fce25fa61764cbadcb6d7d8ba793bd79fad932f88bbdfcf1bdcac",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9d6709e06ca707ff35f3716d56b12110a4589757919905658f494ccccf5a60f5",
-				"dweb:/ipfs/QmWeJh1iMUNvqrgL47myAkx2rk6QQ6M2Lzd7QH5Kx6FM2V"
+				"bzz-raw://0bce62c45ee80d9da0e021181b850845b5887f68a9b50c06cfc26cd1c8dc8a54",
+				"dweb:/ipfs/QmcD3QKepHC5dyHsYLqjAf8VRYjzDiTeMkd6duJ1Jb9p1n"
 			]
 		}
 	},

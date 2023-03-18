@@ -1,8 +1,8 @@
 {
-	"id": "63915b119a0579b4b11334d89e7bb5c9",
+	"id": "a8613a6e53ac4a72b1fd0f35eacbbd3d",
 	"_format": "hh-sol-build-info-1",
-	"solcVersion": "0.8.7",
-	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"solcVersion": "0.8.18",
+	"solcLongVersion": "0.8.18+commit.87f61d96",
 	"input": {
 		"language": "Solidity",
 		"sources": {
@@ -125,7 +125,7 @@
 							"deleteProduct(uint256)": "ed90c7b7"
 						}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_description\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_unit\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_price\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_date\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_expiryDate\",\"type\":\"bytes\"}],\"name\":\"addSupplierProduct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"deleteProduct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Interfaces/ISupplierProduct.sol\":\"ISupplierProduct\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Interfaces/ISupplierProduct.sol\":{\"keccak256\":\"0x42af901c925c81348599f9ed8c348558eb9acde878627079fe8d58c415137428\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://227e01f157a17e0c853a87209371d77c317b7c18ef8ad37e718bf5d7a2edd603\",\"dweb:/ipfs/QmT9pJcFwumXiVMP1uWbT8ixsxRnqy85UE5U49rw85S4Vo\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_description\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_unit\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_price\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_date\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_expiryDate\",\"type\":\"bytes\"}],\"name\":\"addSupplierProduct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"deleteProduct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Interfaces/ISupplierProduct.sol\":\"ISupplierProduct\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Interfaces/ISupplierProduct.sol\":{\"keccak256\":\"0x42af901c925c81348599f9ed8c348558eb9acde878627079fe8d58c415137428\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://227e01f157a17e0c853a87209371d77c317b7c18ef8ad37e718bf5d7a2edd603\",\"dweb:/ipfs/QmT9pJcFwumXiVMP1uWbT8ixsxRnqy85UE5U49rw85S4Vo\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -168,6 +168,7 @@
 						{
 							"abstract": false,
 							"baseContracts": [],
+							"canonicalName": "ISupplierProduct",
 							"contractDependencies": [],
 							"contractKind": "interface",
 							"fullyImplemented": false,

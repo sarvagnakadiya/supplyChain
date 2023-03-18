@@ -9,5 +9,7 @@ interface ISupplierManufacturer {
       bytes dispatchTime;
       bytes arrivalTime;
   }
-  function addData(bytes memory _sp_id, address _supplierAddress,address _manufacturerAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external;
+  function transferProduct(bytes memory _sp_id, address _supplierAddress,address _manufacturerAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external;
+
+  function receiveProduct(uint smId, bytes memory _arrivalTime)external;
 }

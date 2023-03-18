@@ -1,13 +1,13 @@
 {
-	"id": "9e61c0c7d407ada4d33e505043d6016a",
+	"id": "9b1c3a7c3b0c163c3652f42613ee548a",
 	"_format": "hh-sol-build-info-1",
-	"solcVersion": "0.8.7",
-	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"solcVersion": "0.8.18",
+	"solcLongVersion": "0.8.18+commit.87f61d96",
 	"input": {
 		"language": "Solidity",
 		"sources": {
-			"contracts/Interfaces/IManufacturerDistributor.sol": {
-				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.0 <=0.8.19;\r\n\r\ninterface IManufacturerDistributor {\r\n  struct manufacturerDistributor{\r\n      bytes mp_id;\r\n      address m_address;\r\n      address d_address;\r\n      bytes dispatchTime;\r\n      bytes arrivalTime;\r\n  }\r\n  function addData(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external;\r\n}"
+			"contracts/Interfaces/ISupplierManufacturer.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.0 <=0.8.19;\r\n\r\ninterface ISupplierManufacturer {\r\n  struct supplierManufacturer{\r\n      bytes sp_id;\r\n      address supplierAddress;\r\n      address manufacturerAddress;\r\n      bytes dispatchTime;\r\n      bytes arrivalTime;\r\n  }\r\n  function transferProduct(bytes memory _sp_id, address _supplierAddress,address _manufacturerAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external;\r\n\r\n  function receiveProduct(uint smId, bytes memory _arrivalTime)external;\r\n}"
 			}
 		},
 		"settings": {
@@ -39,24 +39,42 @@
 	},
 	"output": {
 		"contracts": {
-			"contracts/Interfaces/IManufacturerDistributor.sol": {
-				"IManufacturerDistributor": {
+			"contracts/Interfaces/ISupplierManufacturer.sol": {
+				"ISupplierManufacturer": {
 					"abi": [
 						{
 							"inputs": [
 								{
+									"internalType": "uint256",
+									"name": "smId",
+									"type": "uint256"
+								},
+								{
 									"internalType": "bytes",
-									"name": "_mp_id",
+									"name": "_arrivalTime",
+									"type": "bytes"
+								}
+							],
+							"name": "receiveProduct",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "bytes",
+									"name": "_sp_id",
 									"type": "bytes"
 								},
 								{
 									"internalType": "address",
-									"name": "_manufacturerAddress",
+									"name": "_supplierAddress",
 									"type": "address"
 								},
 								{
 									"internalType": "address",
-									"name": "_distributorAddress",
+									"name": "_manufacturerAddress",
 									"type": "address"
 								},
 								{
@@ -70,7 +88,7 @@
 									"type": "bytes"
 								}
 							],
-							"name": "addData",
+							"name": "transferProduct",
 							"outputs": [],
 							"stateMutability": "nonpayable",
 							"type": "function"
@@ -103,10 +121,11 @@
 						"gasEstimates": null,
 						"legacyAssembly": null,
 						"methodIdentifiers": {
-							"addData(bytes,address,address,bytes,bytes)": "21c4e07f"
+							"receiveProduct(uint256,bytes)": "77c1b897",
+							"transferProduct(bytes,address,address,bytes,bytes)": "3d654ed6"
 						}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_mp_id\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"_manufacturerAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_distributorAddress\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_dispatchTime\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_arrivalTime\",\"type\":\"bytes\"}],\"name\":\"addData\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Interfaces/IManufacturerDistributor.sol\":\"IManufacturerDistributor\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Interfaces/IManufacturerDistributor.sol\":{\"keccak256\":\"0x6dcf95490b31b67eb40a5cc077f4c052749a54381e798e8602eab2f9ddbc3e43\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3f890b5be1f4341b78ecb0bf091ff9bb6fa76d912f6786f2da81a8cc378a7e69\",\"dweb:/ipfs/QmVFmyusRwUTdUkXxcUkz8i7itLN5Ad2T3cCwExq16NHdw\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"smId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_arrivalTime\",\"type\":\"bytes\"}],\"name\":\"receiveProduct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_sp_id\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"_supplierAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_manufacturerAddress\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_dispatchTime\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_arrivalTime\",\"type\":\"bytes\"}],\"name\":\"transferProduct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Interfaces/ISupplierManufacturer.sol\":\"ISupplierManufacturer\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Interfaces/ISupplierManufacturer.sol\":{\"keccak256\":\"0x0e7b426f89e04a7d4c56bf41a446e04aeb1640b5986a0dd70a83bef4cab06979\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://f936393ec9c86f77b90b121ee5255fb1ed1384f177bac53d68697d075d971925\",\"dweb:/ipfs/QmRHSGoph1m6VPAxGWAg6RdGFS97tEj8Pt3uGNRUKrdGmT\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -120,15 +139,15 @@
 			}
 		},
 		"sources": {
-			"contracts/Interfaces/IManufacturerDistributor.sol": {
+			"contracts/Interfaces/ISupplierManufacturer.sol": {
 				"ast": {
-					"absolutePath": "contracts/Interfaces/IManufacturerDistributor.sol",
+					"absolutePath": "contracts/Interfaces/ISupplierManufacturer.sol",
 					"exportedSymbols": {
-						"IManufacturerDistributor": [
-							26
+						"ISupplierManufacturer": [
+							33
 						]
 					},
-					"id": 27,
+					"id": 34,
 					"license": "GPL-3.0",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -149,30 +168,31 @@
 						{
 							"abstract": false,
 							"baseContracts": [],
+							"canonicalName": "ISupplierManufacturer",
 							"contractDependencies": [],
 							"contractKind": "interface",
 							"fullyImplemented": false,
-							"id": 26,
+							"id": 33,
 							"linearizedBaseContracts": [
-								26
+								33
 							],
-							"name": "IManufacturerDistributor",
-							"nameLocation": "84:24:0",
+							"name": "ISupplierManufacturer",
+							"nameLocation": "84:21:0",
 							"nodeType": "ContractDefinition",
 							"nodes": [
 								{
-									"canonicalName": "IManufacturerDistributor.manufacturerDistributor",
+									"canonicalName": "ISupplierManufacturer.supplierManufacturer",
 									"id": 12,
 									"members": [
 										{
 											"constant": false,
 											"id": 3,
 											"mutability": "mutable",
-											"name": "mp_id",
-											"nameLocation": "159:5:0",
+											"name": "sp_id",
+											"nameLocation": "153:5:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 12,
-											"src": "153:11:0",
+											"src": "147:11:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -183,7 +203,7 @@
 												"id": 2,
 												"name": "bytes",
 												"nodeType": "ElementaryTypeName",
-												"src": "153:5:0",
+												"src": "147:5:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_bytes_storage_ptr",
 													"typeString": "bytes"
@@ -195,11 +215,11 @@
 											"constant": false,
 											"id": 5,
 											"mutability": "mutable",
-											"name": "m_address",
-											"nameLocation": "181:9:0",
+											"name": "supplierAddress",
+											"nameLocation": "175:15:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 12,
-											"src": "173:17:0",
+											"src": "167:23:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -210,7 +230,7 @@
 												"id": 4,
 												"name": "address",
 												"nodeType": "ElementaryTypeName",
-												"src": "173:7:0",
+												"src": "167:7:0",
 												"stateMutability": "nonpayable",
 												"typeDescriptions": {
 													"typeIdentifier": "t_address",
@@ -223,11 +243,11 @@
 											"constant": false,
 											"id": 7,
 											"mutability": "mutable",
-											"name": "d_address",
-											"nameLocation": "207:9:0",
+											"name": "manufacturerAddress",
+											"nameLocation": "207:19:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 12,
-											"src": "199:17:0",
+											"src": "199:27:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -252,10 +272,10 @@
 											"id": 9,
 											"mutability": "mutable",
 											"name": "dispatchTime",
-											"nameLocation": "231:12:0",
+											"nameLocation": "241:12:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 12,
-											"src": "225:18:0",
+											"src": "235:18:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -266,7 +286,7 @@
 												"id": 8,
 												"name": "bytes",
 												"nodeType": "ElementaryTypeName",
-												"src": "225:5:0",
+												"src": "235:5:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_bytes_storage_ptr",
 													"typeString": "bytes"
@@ -279,10 +299,10 @@
 											"id": 11,
 											"mutability": "mutable",
 											"name": "arrivalTime",
-											"nameLocation": "258:11:0",
+											"nameLocation": "268:11:0",
 											"nodeType": "VariableDeclaration",
 											"scope": 12,
-											"src": "252:17:0",
+											"src": "262:17:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -293,7 +313,7 @@
 												"id": 10,
 												"name": "bytes",
 												"nodeType": "ElementaryTypeName",
-												"src": "252:5:0",
+												"src": "262:5:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_bytes_storage_ptr",
 													"typeString": "bytes"
@@ -302,21 +322,21 @@
 											"visibility": "internal"
 										}
 									],
-									"name": "manufacturerDistributor",
-									"nameLocation": "121:23:0",
+									"name": "supplierManufacturer",
+									"nameLocation": "118:20:0",
 									"nodeType": "StructDefinition",
-									"scope": 26,
-									"src": "114:161:0",
+									"scope": 33,
+									"src": "111:174:0",
 									"visibility": "public"
 								},
 								{
-									"functionSelector": "21c4e07f",
+									"functionSelector": "3d654ed6",
 									"id": 25,
 									"implemented": false,
 									"kind": "function",
 									"modifiers": [],
-									"name": "addData",
-									"nameLocation": "288:7:0",
+									"name": "transferProduct",
+									"nameLocation": "298:15:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 23,
@@ -326,11 +346,11 @@
 												"constant": false,
 												"id": 14,
 												"mutability": "mutable",
-												"name": "_mp_id",
-												"nameLocation": "309:6:0",
+												"name": "_sp_id",
+												"nameLocation": "327:6:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 25,
-												"src": "296:19:0",
+												"src": "314:19:0",
 												"stateVariable": false,
 												"storageLocation": "memory",
 												"typeDescriptions": {
@@ -341,7 +361,7 @@
 													"id": 13,
 													"name": "bytes",
 													"nodeType": "ElementaryTypeName",
-													"src": "296:5:0",
+													"src": "314:5:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_bytes_storage_ptr",
 														"typeString": "bytes"
@@ -353,11 +373,11 @@
 												"constant": false,
 												"id": 16,
 												"mutability": "mutable",
-												"name": "_manufacturerAddress",
-												"nameLocation": "325:20:0",
+												"name": "_supplierAddress",
+												"nameLocation": "343:16:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 25,
-												"src": "317:28:0",
+												"src": "335:24:0",
 												"stateVariable": false,
 												"storageLocation": "default",
 												"typeDescriptions": {
@@ -368,7 +388,7 @@
 													"id": 15,
 													"name": "address",
 													"nodeType": "ElementaryTypeName",
-													"src": "317:7:0",
+													"src": "335:7:0",
 													"stateMutability": "nonpayable",
 													"typeDescriptions": {
 														"typeIdentifier": "t_address",
@@ -381,11 +401,11 @@
 												"constant": false,
 												"id": 18,
 												"mutability": "mutable",
-												"name": "_distributorAddress",
-												"nameLocation": "354:19:0",
+												"name": "_manufacturerAddress",
+												"nameLocation": "368:20:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 25,
-												"src": "346:27:0",
+												"src": "360:28:0",
 												"stateVariable": false,
 												"storageLocation": "default",
 												"typeDescriptions": {
@@ -396,7 +416,7 @@
 													"id": 17,
 													"name": "address",
 													"nodeType": "ElementaryTypeName",
-													"src": "346:7:0",
+													"src": "360:7:0",
 													"stateMutability": "nonpayable",
 													"typeDescriptions": {
 														"typeIdentifier": "t_address",
@@ -410,10 +430,10 @@
 												"id": 20,
 												"mutability": "mutable",
 												"name": "_dispatchTime",
-												"nameLocation": "387:13:0",
+												"nameLocation": "402:13:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 25,
-												"src": "374:26:0",
+												"src": "389:26:0",
 												"stateVariable": false,
 												"storageLocation": "memory",
 												"typeDescriptions": {
@@ -424,7 +444,7 @@
 													"id": 19,
 													"name": "bytes",
 													"nodeType": "ElementaryTypeName",
-													"src": "374:5:0",
+													"src": "389:5:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_bytes_storage_ptr",
 														"typeString": "bytes"
@@ -437,10 +457,10 @@
 												"id": 22,
 												"mutability": "mutable",
 												"name": "_arrivalTime",
-												"nameLocation": "414:12:0",
+												"nameLocation": "429:12:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 25,
-												"src": "401:25:0",
+												"src": "416:25:0",
 												"stateVariable": false,
 												"storageLocation": "memory",
 												"typeDescriptions": {
@@ -451,7 +471,7 @@
 													"id": 21,
 													"name": "bytes",
 													"nodeType": "ElementaryTypeName",
-													"src": "401:5:0",
+													"src": "416:5:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_bytes_storage_ptr",
 														"typeString": "bytes"
@@ -460,27 +480,109 @@
 												"visibility": "internal"
 											}
 										],
-										"src": "295:132:0"
+										"src": "313:129:0"
 									},
 									"returnParameters": {
 										"id": 24,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "435:0:0"
+										"src": "450:0:0"
 									},
-									"scope": 26,
-									"src": "279:157:0",
+									"scope": 33,
+									"src": "289:162:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "77c1b897",
+									"id": 32,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "receiveProduct",
+									"nameLocation": "466:14:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 30,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 27,
+												"mutability": "mutable",
+												"name": "smId",
+												"nameLocation": "486:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 32,
+												"src": "481:9:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 26,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "481:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 29,
+												"mutability": "mutable",
+												"name": "_arrivalTime",
+												"nameLocation": "505:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 32,
+												"src": "492:25:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 28,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "492:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "480:38:0"
+									},
+									"returnParameters": {
+										"id": 31,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "526:0:0"
+									},
+									"scope": 33,
+									"src": "457:70:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "external"
 								}
 							],
-							"scope": 27,
-							"src": "74:365:0",
+							"scope": 34,
+							"src": "74:456:0",
 							"usedErrors": []
 						}
 					],
-					"src": "37:402:0"
+					"src": "37:493:0"
 				},
 				"id": 0
 			}

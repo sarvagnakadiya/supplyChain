@@ -22,12 +22,23 @@ contract distributorProduct is IDistributorProduct{
         productCounter++;
     }
 
-    function getDistributorProducts() public view returns(uint[] memory){
+    function getDistributorProductIds() public view returns(uint[] memory){
         return addressToproductsIdMapping[msg.sender];
     }
 
-    function getProduct(uint _id) public view returns(distributorProduct memory){
+    function getSingleProduct(uint _id) public view returns(distributorProduct memory){
         return productsIdMappingToStructMapping[_id];
+    }
+
+    function getAllProductsOfDistributor(address _distributorAddress) public view returns(distributorProduct[] memory)
+    {
+        uint[] memory productIds= addressToproductsIdMapping[_distributorAddress];
+        distributorProduct[] memory DistributorP = new distributorProduct[](productIds.length);
+        for(uint i=0;i<productIds.length;i++)
+        {
+                DistributorP[i] =productsIdMappingToStructMapping[productIds[i]];
+        }
+        return DistributorP;
     }
 
     function deleteProduct(uint _id)external override{

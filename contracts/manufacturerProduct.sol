@@ -22,12 +22,23 @@ contract manufacturerProduct is IManufacturerProduct{
         productCounter++;
     }
 
-    function getManufacturerProducts() public view returns(uint[] memory){
+    function getManufacturerProductIds() public view returns(uint[] memory){
         return addressToproductsIdMapping[msg.sender];
     }
 
-    function getProduct(uint _id) public view returns(manufacturerProduct memory){
+    function getSingleProduct(uint _id) public view returns(manufacturerProduct memory){
         return productsIdMappingToStructMapping[_id];
+    }
+
+     function getAllProductsOfManufacturer(address _manufacturerAddress) public view returns(manufacturerProduct[] memory)
+    {
+        uint[] memory productIds= addressToproductsIdMapping[_manufacturerAddress];
+        manufacturerProduct[] memory ManufacturerP = new manufacturerProduct[](productIds.length);
+        for(uint i=0;i<productIds.length;i++)
+        {
+                ManufacturerP[i] =productsIdMappingToStructMapping[productIds[i]];
+        }
+        return ManufacturerP;
     }
 
     function deleteProduct(uint _id)external override{
