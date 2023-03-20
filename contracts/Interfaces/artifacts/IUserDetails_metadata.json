@@ -1,10 +1,66 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "eventDeleteUser",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum IUserDetails.userType",
+						"name": "_type",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_physicalAddress",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_image",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_timeUpdated",
+						"type": "uint256"
+					}
+				],
+				"name": "eventUserData",
+				"type": "event"
+			},
 			{
 				"inputs": [
 					{
@@ -114,11 +170,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IUserDetails.sol": {
-			"keccak256": "0x3ecf79e25d9f0971044ed92876ae99d155a761b3898f49b96b034b638e0faafe",
+			"keccak256": "0xb35917e24e3ddcaadf856dfcbeaa3d2924158e061cf54494e150a2047e65c422",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d2b1eb3edf1edeb40046e17b5396756d04185bf48f7c3088733f9b0a708b007c",
-				"dweb:/ipfs/QmSk82xGjiCL1xZL8KYMsZJZ6nmpDTNHQfqkhzZgyVgVSq"
+				"bzz-raw://64717b43d412a3a70c6e888f9aa337b9b13ef82512fb9c3201989580d1a32590",
+				"dweb:/ipfs/QmeNUg6NDyxwrY9WcEqPqQpCZ3QjMXoKhM9rmPVJE6vcy2"
 			]
 		}
 	},

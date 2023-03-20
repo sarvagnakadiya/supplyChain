@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -13,9 +13,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_arrivalTime",
-						"type": "bytes"
+						"type": "uint32"
 					}
 				],
 				"name": "receiveProduct",
@@ -26,9 +26,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "_sp_id",
-						"type": "bytes"
+						"internalType": "uint256",
+						"name": "_spId",
+						"type": "uint256"
 					},
 					{
 						"internalType": "address",
@@ -41,14 +41,14 @@
 						"type": "address"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_dispatchTime",
-						"type": "bytes"
+						"type": "uint32"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_arrivalTime",
-						"type": "bytes"
+						"type": "uint32"
 					}
 				],
 				"name": "transferProduct",
@@ -85,11 +85,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x0e7b426f89e04a7d4c56bf41a446e04aeb1640b5986a0dd70a83bef4cab06979",
+			"keccak256": "0x6e31729ee28f21b19ad120e61136c587bb8838271c0b2b03e8697bd9065b1b1f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f936393ec9c86f77b90b121ee5255fb1ed1384f177bac53d68697d075d971925",
-				"dweb:/ipfs/QmRHSGoph1m6VPAxGWAg6RdGFS97tEj8Pt3uGNRUKrdGmT"
+				"bzz-raw://6da7538610cf17140ca96f8af0348582c53d9a82f65936c6f1b9e37ba0a510c4",
+				"dweb:/ipfs/QmSgfVMbvQRiPFX3tAeA9zjQQY3cFHQnEohE1GnBYGrAon"
 			]
 		}
 	},

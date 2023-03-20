@@ -13,9 +13,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_arrivalTime",
-						"type": "bytes"
+						"type": "uint32"
 					}
 				],
 				"name": "receiveProduct",
@@ -41,14 +41,14 @@
 						"type": "address"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_dispatchTime",
-						"type": "bytes"
+						"type": "uint32"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_arrivalTime",
-						"type": "bytes"
+						"type": "uint32"
 					}
 				],
 				"name": "transferproduct",
@@ -85,11 +85,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerDistributor.sol": {
-			"keccak256": "0xda9c5508b1da2ffdcecdc0b25f74cbd717fc580a68b9987e46ba674e031bcf00",
+			"keccak256": "0x364c46379935652b98ffdf20040339ae16553ee70635b4d41d69c05995696143",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e6c0cfd7363f273ef980a850aa895019c3c0b7bdbbf907a1f72340cb24889662",
-				"dweb:/ipfs/QmWnPyhZUYftat3hota2YdpL8LkTMpJBwWgSoq4Q3ma3ou"
+				"bzz-raw://0b7293295e6e3e733ef0ac23a6abefb6212b32ba6f1b157f94ed4d598826db81",
+				"dweb:/ipfs/QmQTPZ66qYPwBXQ58E23UhUzyf5BeGYAne3kzeqbh67Vq6"
 			]
 		}
 	},

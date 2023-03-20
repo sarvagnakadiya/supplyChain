@@ -49,8 +49,8 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"receiveProduct(uint256,bytes)": "77c1b897",
-			"transferProduct(bytes,address,address,bytes,bytes)": "3d654ed6"
+			"receiveProduct(uint256,uint32)": "911a34fe",
+			"transferProduct(uint256,address,address,uint32,uint32)": "3f5d2e2e"
 		}
 	},
 	"abi": [
@@ -62,9 +62,9 @@
 					"type": "uint256"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint32",
 					"name": "_arrivalTime",
-					"type": "bytes"
+					"type": "uint32"
 				}
 			],
 			"name": "receiveProduct",
@@ -75,9 +75,9 @@
 		{
 			"inputs": [
 				{
-					"internalType": "bytes",
-					"name": "_sp_id",
-					"type": "bytes"
+					"internalType": "uint256",
+					"name": "_spId",
+					"type": "uint256"
 				},
 				{
 					"internalType": "address",
@@ -90,14 +90,14 @@
 					"type": "address"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint32",
 					"name": "_dispatchTime",
-					"type": "bytes"
+					"type": "uint32"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint32",
 					"name": "_arrivalTime",
-					"type": "bytes"
+					"type": "uint32"
 				}
 			],
 			"name": "transferProduct",

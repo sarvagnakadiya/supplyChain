@@ -2,24 +2,26 @@
 import "./Interfaces/ISupplierProduct.sol";
 pragma solidity >=0.8.0 <=0.8.19;
 contract supplierProduct is ISupplierProduct{
-    uint productCounter = 1;
+    uint spId = 1;
     uint[] allProducts;
     mapping(uint => supplierProduct) public productsIdMappingToStructMapping;
     mapping(address => uint[]) public addressToproductsIdMapping;
 
+    // struct
     //   address supplierAddress;
     //   bytes sp_name;
     //   bytes sp_description;
-    //   bytes sp_unit;
-    //   bytes sp_price;
-    //   bytes sp_date;
-    //   bytes sp_expiryDate;
+    //   uint sp_unit;
+    //   uint sp_price;
+    //   uint32 sp_date;
+    //   uint32 sp_expiryDate;
+    
 
-
-    function addSupplierProduct(bytes calldata _name,bytes calldata _description,bytes memory _unit,bytes memory _price,bytes memory _date,bytes memory _expiryDate)public {
-        productsIdMappingToStructMapping[productCounter] = supplierProduct(msg.sender,_name,_description,_unit,_price,_date,_expiryDate);
-        addressToproductsIdMapping[msg.sender].push(productCounter);
-        productCounter++;
+    function addSupplierProduct(bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)public override  {
+        productsIdMappingToStructMapping[spId] = supplierProduct(msg.sender,_name,_description,_unit,_price,_date,_expiryDate);
+        addressToproductsIdMapping[msg.sender].push(spId);
+        emit eventAddSupplierProduct(spId,msg.sender,_name,_description,_unit,_price,_date,_expiryDate,block.timestamp);
+        spId++;
     }
 
     function getSupplierProductIds() public view returns(uint[] memory){
@@ -41,7 +43,8 @@ contract supplierProduct is ISupplierProduct{
         return supplierP;
     }
 
-    function deleteProduct(uint _id)public {
+    function deleteProduct(uint _id)public override {
         delete productsIdMappingToStructMapping[_id];
+        emit eventDeleteSupplierProduct(_id);
     }
 }

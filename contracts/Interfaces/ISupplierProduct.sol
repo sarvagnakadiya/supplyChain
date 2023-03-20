@@ -6,11 +6,15 @@ interface ISupplierProduct {
       address supplierAddress;
       bytes sp_name;
       bytes sp_description;
-      bytes sp_unit;
-      bytes sp_price;
-      bytes sp_date;
-      bytes sp_expiryDate;
+      uint128 sp_unit;
+      uint128 sp_price;
+      uint32 sp_date;
+      uint32 sp_expiryDate;
   }
-  function addSupplierProduct(bytes calldata _name,bytes calldata _description,bytes memory _unit,bytes memory _price,bytes memory _date,bytes memory _expiryDate)external  ;
+
+  event eventAddSupplierProduct(uint indexed _spid,address indexed _address, bytes _name,bytes _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate, uint256 _timeAdded);
+  event eventDeleteSupplierProduct(uint indexed _id);
+  
+  function addSupplierProduct(bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)external  ;
   function deleteProduct(uint _id)external ;
 }

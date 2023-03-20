@@ -2,24 +2,25 @@
 import "./Interfaces/IManufacturerProduct.sol";
 pragma solidity >=0.8.0 <=0.8.19;
 contract manufacturerProduct is IManufacturerProduct{
-    uint productCounter = 1;
+    uint mpId = 1;
     uint[] allProducts;
     mapping(uint => manufacturerProduct) public productsIdMappingToStructMapping;
     mapping(address => uint[]) public addressToproductsIdMapping;
 
-    //   bytes[] supplierAddress;
-    //   bytes[] sm_id;    
+    //   address[] supplierAddress;
+    //   uint[] smId;    
     //   bytes mp_name;
     //   bytes mp_description;
-    //   bytes mp_unit;
-    //   bytes mp_price;
-    //   bytes mp_date;
-    //   bytes mp_expiryDate;
+    //   uint128 mp_unit;
+    //   uint128 mp_price;
+    //   uint32 mp_date;
+    //   uint32 mp_expiryDate;
 
-    function addManufacturerProduct(address[] memory _supplierAddress,bytes[] memory _sm_id,bytes calldata _name,bytes calldata _description,bytes memory _unit,bytes memory _price,bytes memory _date,bytes memory _expiryDate)public override {
-        productsIdMappingToStructMapping[productCounter] = manufacturerProduct(_supplierAddress,_sm_id,_name,_description,_unit,_price,_date,_expiryDate);
-        addressToproductsIdMapping[msg.sender].push(productCounter);
-        productCounter++;
+    function addManufacturerProduct(address[] memory _supplierAddress,uint[] memory _smId,bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)public override {
+        productsIdMappingToStructMapping[mpId] = manufacturerProduct(_supplierAddress,_smId,_name,_description,_unit,_price,_date,_expiryDate);
+        addressToproductsIdMapping[msg.sender].push(mpId);
+        emit eventAddManufacturerProduct(mpId,_supplierAddress,_smId,_name,_description,_unit,_price,_date,_expiryDate);
+        mpId++;
     }
 
     function getManufacturerProductIds() public view returns(uint[] memory){
@@ -43,5 +44,6 @@ contract manufacturerProduct is IManufacturerProduct{
 
     function deleteProduct(uint _id)external override{
         delete productsIdMappingToStructMapping[_id];
+        emit eventDeleteManufacturerProduct(_id);
     }
 }

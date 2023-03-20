@@ -5,22 +5,25 @@ contract supplierManufacturer is ISupplierManufacturer{
     uint public smId = 1;
     uint[] allSmId;
 
-    //   bytes sp_id;
+    //   uint sp_id;
     //   address supplierAddress;
     //   address manufacturerAddress;
-    //   bytes dispatchTime;
-    //   bytes arrivalTime;
+    //   uint32 dispatchTime;
+    //   uint32 arrivalTime;
+
+    event eventSupplierManufacturerTransfer(uint indexed _smId,uint indexed _spId, address _supplierAddress,address _manufacturerAddress,uint32 _dispatchTime,uint32 _arrivalTime);
 
     mapping(uint => supplierManufacturer) public smidToStructMapping;
     mapping(address => uint[]) public manufacturerTosmIDMapping;
-    function transferProduct(bytes memory _sp_id, address _supplierAddress,address _manufacturerAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external override{
-        smidToStructMapping[smId] = supplierManufacturer(_sp_id,_supplierAddress,_manufacturerAddress,_dispatchTime,_arrivalTime);
+    function transferProduct(uint _spId, address _supplierAddress,address _manufacturerAddress,uint32 _dispatchTime,uint32 _arrivalTime)external override{
+        smidToStructMapping[smId] = supplierManufacturer(_spId,_supplierAddress,_manufacturerAddress,_dispatchTime,_arrivalTime);
         allSmId.push(smId);
         manufacturerTosmIDMapping[_manufacturerAddress].push(smId);
+        emit eventSupplierManufacturerTransfer(smId,_spId,_supplierAddress,_manufacturerAddress,_dispatchTime,_arrivalTime);
         smId++;
     } 
 
-    function receiveProduct(uint _smId, bytes memory _arrivalTime)external override{
+    function receiveProduct(uint _smId, uint32 _arrivalTime)external override{
         smidToStructMapping[_smId].arrivalTime = _arrivalTime;
         
     } 

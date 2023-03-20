@@ -58,6 +58,62 @@
 	},
 	"abi": [
 		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				}
+			],
+			"name": "eventDeleteUser",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "enum IUserDetails.userType",
+					"name": "_type",
+					"type": "uint8"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "_name",
+					"type": "bytes"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "_physicalAddress",
+					"type": "bytes"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "_image",
+					"type": "bytes"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "_timeUpdated",
+					"type": "uint256"
+				}
+			],
+			"name": "eventUserData",
+			"type": "event"
+		},
+		{
 			"inputs": [
 				{
 					"internalType": "enum IUserDetails.userType",

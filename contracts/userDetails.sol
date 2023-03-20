@@ -11,35 +11,37 @@ contract userDetails is IUserDetails{
     address[] public manufacturers;
     address[] public distributors;
 
-    
-
     function addUser(userType _type, bytes calldata _name, bytes calldata _physicalAddress,bytes memory _image)public{
-
-         require((userDetailsMapping[msg.sender].userName).length == 0, "User already registered");
-         userDetailsMapping[msg.sender] = userDetails(_type,_name,_physicalAddress,_image);
-         users.push(msg.sender);
-         if(_type == userType.Supplier) suppliers.push(msg.sender);
-         if(_type == userType.Manufacturer) manufacturers.push(msg.sender);
-         if(_type == userType.Distributor) distributors.push(msg.sender);
-         
-
+        require((userDetailsMapping[msg.sender].userName).length == 0, "User already registered");
+        userDetailsMapping[msg.sender] = userDetails(_type,_name,_physicalAddress,_image);
+        users.push(msg.sender);
+        if(_type == userType.Supplier) suppliers.push(msg.sender);
+        if(_type == userType.Manufacturer) manufacturers.push(msg.sender);
+        if(_type == userType.Distributor) distributors.push(msg.sender);
+        emit eventUserData(msg.sender,_type,_name,_physicalAddress,_image,block.timestamp);
     }
     function deleteUser(address _address)public{
-        require((userDetailsMapping[msg.sender].userName).length == 0, "User not present");
+        // require((userDetailsMapping[msg.sender].userName).length == 0, "User not present");
         delete userDetailsMapping[_address];
-
+        emit eventDeleteUser(msg.sender);
     }
 
     function editName(bytes memory _name)public{
         userDetailsMapping[msg.sender].userName = _name;
+        userDetails memory u = userDetailsMapping[msg.sender];
+        emit eventUserData(msg.sender,u.userType,_name,u.userPhysicalAddress,u.userImage,block.timestamp);
 
     }
     function editPhysicalAddress(bytes memory _physicalAddress)public{
         userDetailsMapping[msg.sender].userPhysicalAddress = _physicalAddress;
+        userDetails memory u = userDetailsMapping[msg.sender];
+        emit eventUserData(msg.sender,u.userType,u.userName,_physicalAddress,u.userImage,block.timestamp);
 
     }
     function editImage(bytes memory _image)public{
         userDetailsMapping[msg.sender].userImage = _image;
+        userDetails memory u = userDetailsMapping[msg.sender];
+        emit eventUserData(msg.sender,u.userType,u.userName,u.userImage,_image,block.timestamp);
     }
 
     function getSingleUser(address _address) public view returns(userDetails memory){

@@ -1,10 +1,84 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_spid",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_name",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_description",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "_unit",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "_price",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "_date",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "_expiryDate",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_timeAdded",
+						"type": "uint256"
+					}
+				],
+				"name": "eventAddSupplierProduct",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "eventDeleteSupplierProduct",
+				"type": "event"
+			},
 			{
 				"inputs": [
 					{
@@ -18,24 +92,24 @@
 						"type": "bytes"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint128",
 						"name": "_unit",
-						"type": "bytes"
+						"type": "uint128"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint128",
 						"name": "_price",
-						"type": "bytes"
+						"type": "uint128"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_date",
-						"type": "bytes"
+						"type": "uint32"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "uint32",
 						"name": "_expiryDate",
-						"type": "bytes"
+						"type": "uint32"
 					}
 				],
 				"name": "addSupplierProduct",
@@ -85,11 +159,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierProduct.sol": {
-			"keccak256": "0x42af901c925c81348599f9ed8c348558eb9acde878627079fe8d58c415137428",
+			"keccak256": "0xc4dba15508b60ff7bf51b196a3bcb3924308b128f16c5cbe0cdeb4d881e80927",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://227e01f157a17e0c853a87209371d77c317b7c18ef8ad37e718bf5d7a2edd603",
-				"dweb:/ipfs/QmT9pJcFwumXiVMP1uWbT8ixsxRnqy85UE5U49rw85S4Vo"
+				"bzz-raw://b12aabe48f4fa0493a26cfd33185862706d7c75c57225557eac4290419c9d78c",
+				"dweb:/ipfs/QmQKyFK4DaLUeS2BWmHhfXk6kDTkX2cZ9r8hCsxbFbtuCa"
 			]
 		}
 	},

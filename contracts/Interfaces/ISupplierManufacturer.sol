@@ -3,13 +3,13 @@ pragma solidity >=0.8.0 <=0.8.19;
 
 interface ISupplierManufacturer {
   struct supplierManufacturer{
-      bytes sp_id;
+      uint spId;
       address supplierAddress;
       address manufacturerAddress;
-      bytes dispatchTime;
-      bytes arrivalTime;
+      uint32 dispatchTime;
+      uint32 arrivalTime;
   }
-  function transferProduct(bytes memory _sp_id, address _supplierAddress,address _manufacturerAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external;
+  function transferProduct(uint _spId, address _supplierAddress,address _manufacturerAddress,uint32 _dispatchTime,uint32 _arrivalTime)external;
 
-  function receiveProduct(uint smId, bytes memory _arrivalTime)external;
+  function receiveProduct(uint smId, uint32 _arrivalTime)external;
 }

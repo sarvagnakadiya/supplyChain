@@ -2,24 +2,25 @@
 import "./Interfaces/IDistributorProduct.sol";
 pragma solidity >=0.8.0 <=0.8.19;
 contract distributorProduct is IDistributorProduct{
-    uint productCounter = 1;
+    uint dpId = 1;
     uint[] allProducts;
     mapping(uint => distributorProduct) public productsIdMappingToStructMapping;
     mapping(address => uint[]) public addressToproductsIdMapping;
 
     //   address[] manufacturerAddress;
-    //   bytes[] md_id;    
+    //   uint[] mdId;    
     //   bytes dp_name;
     //   bytes dp_description;
-    //   bytes dp_unit;
-    //   bytes dp_price;
-    //   bytes dp_date;
-    //   bytes dp_expiryDate;
+    //   uint128 dp_unit;
+    //   uint128 dp_price;
+    //   uint32 dp_date;
+    //   uint32 dp_expiryDate;
 
-    function addDistributorProduct(address[] memory _manufacturerAddress,bytes[] memory _md_id, bytes calldata _name,bytes calldata _description,bytes memory _unit,bytes memory _price,bytes memory _date,bytes memory _expiryDate)public override {
-        productsIdMappingToStructMapping[productCounter] = distributorProduct(_manufacturerAddress,_md_id,_name,_description,_unit,_price,_date,_expiryDate);
-        addressToproductsIdMapping[msg.sender].push(productCounter);
-        productCounter++;
+    function addDistributorProduct(address[] memory _manufacturerAddress,uint[] memory _mdId, bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)public override {
+        productsIdMappingToStructMapping[dpId] = distributorProduct(_manufacturerAddress,_mdId,_name,_description,_unit,_price,_date,_expiryDate);
+        addressToproductsIdMapping[msg.sender].push(dpId);
+        emit eventAddDistributorProduct(dpId,_manufacturerAddress,_mdId,_name,_description,_unit,_price,_date,_expiryDate);
+        dpId++;
     }
 
     function getDistributorProductIds() public view returns(uint[] memory){
@@ -43,5 +44,6 @@ contract distributorProduct is IDistributorProduct{
 
     function deleteProduct(uint _id)external override{
         delete productsIdMappingToStructMapping[_id];
+        emit eventDeleteDistributorProduct(_id);
     }
 }

@@ -14,8 +14,9 @@ interface IUserDetails {
       bytes userPhysicalAddress;
       bytes userImage;
   }
+  event eventUserData(address _address, userType _type, bytes _name, bytes _physicalAddress,bytes _image, uint256 _timeUpdated);
+  event eventDeleteUser(address _address);
 
- 
   function addUser(userType _type, bytes calldata _name, bytes calldata _physicalAddress,bytes memory _image)external;
   function deleteUser(address _address)external;
   function editName(bytes memory _name)external;

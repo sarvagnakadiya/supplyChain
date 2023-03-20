@@ -6,9 +6,9 @@ interface IManufacturerDistributor {
       bytes mp_id;
       address m_address;
       address d_address;
-      bytes dispatchTime;
-      bytes arrivalTime;
+      uint32 dispatchTime;
+      uint32 arrivalTime;
   }
-  function transferproduct(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external;
-  function receiveProduct(uint _mdId, bytes memory _arrivalTime)external;
+  function transferproduct(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,uint32 _dispatchTime,uint32 _arrivalTime)external;
+  function receiveProduct(uint _mdId, uint32 _arrivalTime)external;
 }

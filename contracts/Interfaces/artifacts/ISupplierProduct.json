@@ -49,11 +49,85 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"addSupplierProduct(bytes,bytes,bytes,bytes,bytes,bytes)": "f4a8dbf9",
+			"addSupplierProduct(bytes,bytes,uint128,uint128,uint32,uint32)": "ee7e7c99",
 			"deleteProduct(uint256)": "ed90c7b7"
 		}
 	},
 	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_spid",
+					"type": "uint256"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "_address",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "_name",
+					"type": "bytes"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "_description",
+					"type": "bytes"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint128",
+					"name": "_unit",
+					"type": "uint128"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint128",
+					"name": "_price",
+					"type": "uint128"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "_date",
+					"type": "uint32"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "_expiryDate",
+					"type": "uint32"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "_timeAdded",
+					"type": "uint256"
+				}
+			],
+			"name": "eventAddSupplierProduct",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_id",
+					"type": "uint256"
+				}
+			],
+			"name": "eventDeleteSupplierProduct",
+			"type": "event"
+		},
 		{
 			"inputs": [
 				{
@@ -67,24 +141,24 @@
 					"type": "bytes"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint128",
 					"name": "_unit",
-					"type": "bytes"
+					"type": "uint128"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint128",
 					"name": "_price",
-					"type": "bytes"
+					"type": "uint128"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint32",
 					"name": "_date",
-					"type": "bytes"
+					"type": "uint32"
 				},
 				{
-					"internalType": "bytes",
+					"internalType": "uint32",
 					"name": "_expiryDate",
-					"type": "bytes"
+					"type": "uint32"
 				}
 			],
 			"name": "addSupplierProduct",

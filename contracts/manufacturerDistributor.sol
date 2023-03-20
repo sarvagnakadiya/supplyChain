@@ -14,13 +14,13 @@ contract manufacturerDistributor is IManufacturerDistributor{
     mapping(uint => manufacturerDistributor) public mdidToStructMapping;
     mapping(address => uint[]) public distributorTosmIDMapping;
 
-    function transferproduct(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,bytes memory _dispatchTime,bytes memory _arrivalTime)external override{
+    function transferproduct(bytes memory _mp_id, address _manufacturerAddress,address _distributorAddress,uint32 _dispatchTime,uint32 _arrivalTime)external override{
         mdidToStructMapping[mdId] = manufacturerDistributor(_mp_id,_manufacturerAddress,_distributorAddress,_dispatchTime,_arrivalTime);
         distributorTosmIDMapping[_distributorAddress].push(mdId);
         mdId++;
     } 
 
-    function receiveProduct(uint _mdId, bytes memory _arrivalTime)external override{
+    function receiveProduct(uint _mdId, uint32 _arrivalTime)external override{
         mdidToStructMapping[_mdId].arrivalTime = _arrivalTime;
         
     } 
