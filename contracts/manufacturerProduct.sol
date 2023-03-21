@@ -3,9 +3,8 @@ import "./Interfaces/IManufacturerProduct.sol";
 pragma solidity >=0.8.0 <=0.8.19;
 contract manufacturerProduct is IManufacturerProduct{
     uint mpId = 1;
-    uint[] allProducts;
-    mapping(uint => manufacturerProduct) public productsIdMappingToStructMapping;
-    mapping(address => uint[]) public addressToproductsIdMapping;
+    mapping(uint => manufacturerProduct) public manufacturerProductsIdToStructMapping;
+    mapping(address => uint[]) public manufacturerAddressToproductsIdMapping;
 
     //   address[] supplierAddress;
     //   uint[] smId;    
@@ -17,33 +16,38 @@ contract manufacturerProduct is IManufacturerProduct{
     //   uint32 mp_expiryDate;
 
     function addManufacturerProduct(address[] memory _supplierAddress,uint[] memory _smId,bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)public override {
-        productsIdMappingToStructMapping[mpId] = manufacturerProduct(_supplierAddress,_smId,_name,_description,_unit,_price,_date,_expiryDate);
-        addressToproductsIdMapping[msg.sender].push(mpId);
+        manufacturerProductsIdToStructMapping[mpId] = manufacturerProduct(_supplierAddress,_smId,_name,_description,_unit,_price,_date,_expiryDate);
+        manufacturerAddressToproductsIdMapping[msg.sender].push(mpId);
         emit eventAddManufacturerProduct(mpId,_supplierAddress,_smId,_name,_description,_unit,_price,_date,_expiryDate);
         mpId++;
     }
 
-    function getManufacturerProductIds() public view returns(uint[] memory){
-        return addressToproductsIdMapping[msg.sender];
+    function updateDistributorProductUints(uint _mpId, uint128 _quantity) public override{
+        manufacturerProductsIdToStructMapping[_mpId].mp_unit -= _quantity;  
+        emit eventUpdateDistributorProductUints(_mpId, manufacturerProductsIdToStructMapping[_mpId].mp_unit);
     }
 
-    function getSingleProduct(uint _id) public view returns(manufacturerProduct memory){
-        return productsIdMappingToStructMapping[_id];
+    function getManufacturerProductIds() public view returns(uint[] memory){
+        return manufacturerAddressToproductsIdMapping[msg.sender];
+    }
+
+    function getSingleManufacturerProduct(uint _id) public view returns(manufacturerProduct memory){
+        return manufacturerProductsIdToStructMapping[_id];
     }
 
      function getAllProductsOfManufacturer(address _manufacturerAddress) public view returns(manufacturerProduct[] memory)
     {
-        uint[] memory productIds= addressToproductsIdMapping[_manufacturerAddress];
+        uint[] memory productIds= manufacturerAddressToproductsIdMapping[_manufacturerAddress];
         manufacturerProduct[] memory ManufacturerP = new manufacturerProduct[](productIds.length);
         for(uint i=0;i<productIds.length;i++)
         {
-                ManufacturerP[i] =productsIdMappingToStructMapping[productIds[i]];
+                ManufacturerP[i] =manufacturerProductsIdToStructMapping[productIds[i]];
         }
         return ManufacturerP;
     }
 
-    function deleteProduct(uint _id)external override{
-        delete productsIdMappingToStructMapping[_id];
+    function deleteManufacturerProduct(uint _id)external override{
+        delete manufacturerProductsIdToStructMapping[_id];
         emit eventDeleteManufacturerProduct(_id);
     }
 }

@@ -50,7 +50,8 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"addManufacturerProduct(address[],uint256[],bytes,bytes,uint128,uint128,uint32,uint32)": "448952e1",
-			"deleteProduct(uint256)": "ed90c7b7"
+			"deleteManufacturerProduct(uint256)": "9ea61c7e",
+			"updateDistributorProductUints(uint256,uint128)": "365c66a0"
 		}
 	},
 	"abi": [
@@ -129,6 +130,25 @@
 			"type": "event"
 		},
 		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_dpId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint128",
+					"name": "_quantity",
+					"type": "uint128"
+				}
+			],
+			"name": "eventUpdateDistributorProductUints",
+			"type": "event"
+		},
+		{
 			"inputs": [
 				{
 					"internalType": "address[]",
@@ -184,7 +204,25 @@
 					"type": "uint256"
 				}
 			],
-			"name": "deleteProduct",
+			"name": "deleteManufacturerProduct",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_dpId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint128",
+					"name": "_quantity",
+					"type": "uint128"
+				}
+			],
+			"name": "updateDistributorProductUints",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"

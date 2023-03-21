@@ -9,6 +9,11 @@ interface IManufacturerDistributor {
       uint32 dispatchTime;
       uint32 arrivalTime;
   }
+
+  event eventManufacturerDistributorTransfer(uint indexed _mdId,uint indexed _mpId, address _manufacturerAddress,address _distributorAddress,uint32 _dispatchTime);
+  event eventArrivalTime(uint32 _arrivalTime);
+  
+
   function transferproduct(uint _mpId, address _manufacturerAddress,address _distributorAddress,uint32 _dispatchTime,uint32 _arrivalTime)external;
   function receiveProduct(uint _mdId)external;
 }

@@ -9,19 +9,19 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "uint256",
 						"name": "_dpId",
 						"type": "uint256"
 					},
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "address[]",
 						"name": "_manufacturerAddress",
 						"type": "address[]"
 					},
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "uint256[]",
 						"name": "_mdId",
 						"type": "uint256[]"
@@ -70,13 +70,32 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
 					}
 				],
 				"name": "eventDeleteDistributorProduct",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_dpId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "eventUpdateDistributorProductUints",
 				"type": "event"
 			},
 			{
@@ -130,6 +149,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteDistributorProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
@@ -140,7 +172,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "addressToproductsIdMapping",
+				"name": "distributorAddressToproductsIdMapping",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -155,13 +187,44 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "deleteProduct",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"name": "distributorProductsIdToStructMapping",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "dp_name",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dp_description",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint128",
+						"name": "dp_unit",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "dp_price",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint32",
+						"name": "dp_date",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "dp_expiryDate",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -246,7 +309,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getSingleProduct",
+				"name": "getSingleDistributorProduct",
 				"outputs": [
 					{
 						"components": [
@@ -303,44 +366,18 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_dpId",
 						"type": "uint256"
-					}
-				],
-				"name": "productsIdMappingToStructMapping",
-				"outputs": [
-					{
-						"internalType": "bytes",
-						"name": "dp_name",
-						"type": "bytes"
-					},
-					{
-						"internalType": "bytes",
-						"name": "dp_description",
-						"type": "bytes"
 					},
 					{
 						"internalType": "uint128",
-						"name": "dp_unit",
+						"name": "_quantity",
 						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "dp_price",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint32",
-						"name": "dp_date",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "dp_expiryDate",
-						"type": "uint32"
 					}
 				],
-				"stateMutability": "view",
+				"name": "updateDistributorProductUints",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -372,19 +409,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IDistributorProduct.sol": {
-			"keccak256": "0xc75387be06cae302917b60966a5c57953c07c58e73364d9cea1682311ba6d6ea",
+			"keccak256": "0xff7a17fc59fd60d3b29107496e36b19b4867b8eff5df4a10267e7bc6cce65f9f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c9ed6c0517f038b888a535a5ed3ce6661081df0aa8b51fad013022879c6c562c",
-				"dweb:/ipfs/QmXmAvsQEKhtraKsWotVtDfQsE3yMAMJtKKskn5nZoke5Z"
+				"bzz-raw://cff51cf61bb9d99c83ac9898fb37eec25248dd3654f8d220dce4246a0b7081f7",
+				"dweb:/ipfs/QmQNbszoCvEcdn3c83rNcXioRRwQcRYKTNvCypDGDTitCU"
 			]
 		},
 		"contracts/distributorProduct.sol": {
-			"keccak256": "0x28b80a2404c291945498fac879fd14c411c9915ed1c550ecf0fba89bfb777f8b",
+			"keccak256": "0xf47e2b8de1b947e7e30e251baa126259470431b436f8c6593bb9fede89fb6a5c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://83ee876c559f48ad98a45066bdae368c3e34da56b7bcde070a0c24644c693f91",
-				"dweb:/ipfs/QmZVdkZv3UVjAfured9HNVTQv6v4PhnqoSfftW8pyeXjDH"
+				"bzz-raw://344947fbe5b4f2f7e531d97f796f641065f5a159f0a6c30c4a79253de8ce6406",
+				"dweb:/ipfs/QmWtuZ4m7RgBoEgx7tGCxr5JpECoiVJijH8tVFRkCAvU5Z"
 			]
 		}
 	},

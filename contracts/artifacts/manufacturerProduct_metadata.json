@@ -80,6 +80,25 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_dpId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "eventUpdateDistributorProductUints",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address[]",
@@ -130,36 +149,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "addressToproductsIdMapping",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
 					}
 				],
-				"name": "deleteProduct",
+				"name": "deleteManufacturerProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -246,7 +241,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getSingleProduct",
+				"name": "getSingleManufacturerProduct",
 				"outputs": [
 					{
 						"components": [
@@ -302,12 +297,36 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "productsIdMappingToStructMapping",
+				"name": "manufacturerAddressToproductsIdMapping",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "manufacturerProductsIdToStructMapping",
 				"outputs": [
 					{
 						"internalType": "bytes",
@@ -342,6 +361,24 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mpId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "updateDistributorProductUints",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -372,19 +409,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerProduct.sol": {
-			"keccak256": "0x0c1cd11a50a33ccd9f073b1852295c283f5f5398402519943bd2771b13f41f21",
+			"keccak256": "0x7130a7a14b28470a08a1b636a40a69a31e092d0be26a4bfaebffaa9865c825f2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://fdafa4fa665e025bfc6bff1f847ab7699a18941db9bd511c32bad07e8bf4b082",
-				"dweb:/ipfs/QmUVHcjPTkLgFh7NtnB6yVQSBpT33dNGrZQGDm8fJswABV"
+				"bzz-raw://e3c0ec2810468edc2fb8603c9c17a737bb1cfe42d3590ba39b4752a47db201f4",
+				"dweb:/ipfs/QmSP28fyf9tvmSV91Ezb5aQNWBbQE7nLRPMQjkjUCFYeg7"
 			]
 		},
 		"contracts/manufacturerProduct.sol": {
-			"keccak256": "0x9e8d605a563d492e49c54e2ee219219c8c78a7c4ede60e662823d91b0e47e86d",
+			"keccak256": "0xa528249466455f98ad2c4b6debc92e6fbdff24f762dd4901ece44807d2b8e746",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c6692f6fd51ce9607d29ba51dd584e7a3cd88207d3d96fc4caad66b198dc710f",
-				"dweb:/ipfs/QmQXH4VnMtuDU43LAfSLGrbMhGfFXgXwik47EGDtaW2ZJp"
+				"bzz-raw://9dbe9809d5a88418535a1268e8e09dc4b16aa2413609b36fb45e348cabdea2dc",
+				"dweb:/ipfs/QmY3DW6P8fbFr1yHjT1qCTiAAZDsnZhmatzX98dvk9YTaw"
 			]
 		}
 	},

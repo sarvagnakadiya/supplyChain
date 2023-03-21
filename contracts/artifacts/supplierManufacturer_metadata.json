@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -285,7 +285,7 @@
 		"compilationTarget": {
 			"contracts/supplierManufacturer.sol": "supplierManufacturer"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -298,19 +298,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x0bade9b79eca802b2de565750d8bf5af4a8cf0203d62963f251fada21635e9e4",
+			"keccak256": "0x02bbc82ea907909fe438af04ab3701fabcf894e538207ab7f8686f8b85ea2d03",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://18bce3a8d06cff9456f98db9fb98442b57b26ffbac1066f8017cda08a419beee",
-				"dweb:/ipfs/QmPD6WW6qXyY3MdwUV1CSXugapQARBi92QrLszjFQAfiQx"
+				"bzz-raw://18c256da46a87285b1abf904017acc0aa118e043dc514692d431dd4ff297a341",
+				"dweb:/ipfs/Qme9k5CsJtmwDxGExSjXHQ4ZnmSxqaaSzE5rJqsec2mAh2"
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0xb86c8de0cb760efd6bebffa485733789b22107b94f145a3937fc6486645476e4",
+			"keccak256": "0xb821446802466eba34f2830d9cb18751aed3850128ce0672b65f48e0e3bd73aa",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c321687674cd5599c47d4072a2c94f46f4a816f9a3323057c214ae8e0d9abd52",
-				"dweb:/ipfs/QmNk7afkQvNXBwToyq415uS8jKNMgWmWKEhVVNMQaGbuJq"
+				"bzz-raw://827a4dce8431e91c700a1d4d6422ce4c7933ddbbae7a9fd59be3e94a356d813d",
+				"dweb:/ipfs/QmUa3dUuFJYSGht7vamykPfAR7j5JtmbD4XzxuaUPYgjs6"
 			]
 		}
 	},

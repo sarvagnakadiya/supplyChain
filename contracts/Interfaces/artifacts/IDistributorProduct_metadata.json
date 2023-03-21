@@ -80,6 +80,25 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_dpId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "eventUpdateDistributorProductUints",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address[]",
@@ -135,7 +154,25 @@
 						"type": "uint256"
 					}
 				],
-				"name": "deleteProduct",
+				"name": "deleteDistributorProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_dpId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "updateDistributorProductUints",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -169,11 +206,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IDistributorProduct.sol": {
-			"keccak256": "0xf1dd9bb356bac96c27a5aa1cd6afaca83804f780e1a3479749d7dd1d78c6516d",
+			"keccak256": "0xff7a17fc59fd60d3b29107496e36b19b4867b8eff5df4a10267e7bc6cce65f9f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4fe31980551ccb5f6dbe65d7af3231cee921c2e9ad8d524c81af6ed287ab24f1",
-				"dweb:/ipfs/QmcEvNKEzjzWBY7rUqMDYgXLmvb8yXgqEEGtA39PEfcT5v"
+				"bzz-raw://cff51cf61bb9d99c83ac9898fb37eec25248dd3654f8d220dce4246a0b7081f7",
+				"dweb:/ipfs/QmQNbszoCvEcdn3c83rNcXioRRwQcRYKTNvCypDGDTitCU"
 			]
 		}
 	},

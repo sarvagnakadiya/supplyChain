@@ -55,6 +55,56 @@
 	},
 	"abi": [
 		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "_arrivalTime",
+					"type": "uint32"
+				}
+			],
+			"name": "eventArrivalTime",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_mdId",
+					"type": "uint256"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_mpId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "_manufacturerAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "_distributorAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "_dispatchTime",
+					"type": "uint32"
+				}
+			],
+			"name": "eventManufacturerDistributorTransfer",
+			"type": "event"
+		},
+		{
 			"inputs": [
 				{
 					"internalType": "uint256",

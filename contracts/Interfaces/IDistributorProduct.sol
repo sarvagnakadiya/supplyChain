@@ -15,7 +15,10 @@ interface IDistributorProduct {
 
   event eventAddDistributorProduct(uint indexed _dpId,address[] indexed _manufacturerAddress,uint[] indexed _mdId,bytes _name, bytes _description, uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate);
   event eventDeleteDistributorProduct(uint indexed _id);
+  event eventUpdateDistributorProductUints(uint indexed _dpId,uint128 _quantity);
   
   function addDistributorProduct(address[] memory _manufacturerAddress,uint[] memory _md_id, bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)external;
-  function deleteProduct(uint _id)external;
+  function deleteDistributorProduct(uint _id)external;
+  function updateDistributorProductUints(uint _dpId,uint128 _quantity) external;
+
 }

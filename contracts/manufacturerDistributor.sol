@@ -11,9 +11,6 @@ contract manufacturerDistributor is IManufacturerDistributor{
     //   bytes dispatchTime;
     //   bytes arrivalTime;
 
-    event eventManufacturerDistributorTransfer(uint indexed _mdId,uint indexed _mpId, address _manufacturerAddress,address _distributorAddress,uint32 _dispatchTime);
-    event eventArrivalTime(uint32 _arrivalTime);
-
     mapping(uint => manufacturerDistributor) public mdidToStructMapping;
     mapping(address => uint[]) public distributorTosmIDMapping;
 
@@ -33,8 +30,7 @@ contract manufacturerDistributor is IManufacturerDistributor{
         return mdidToStructMapping[_mdid];
     }
 
-      function getAllmdIdForManufacturer(address _distributorAddress) public view returns(manufacturerDistributor[] memory){
-        
+    function getAllmdIdForManufacturer(address _distributorAddress) public view returns(manufacturerDistributor[] memory){  
         uint[] memory mdIdData = distributorTosmIDMapping[_distributorAddress];
         manufacturerDistributor[] memory mdIdDetails = new manufacturerDistributor[](mdIdData.length);
         for(uint i=0;i<mdIdData.length;i++)

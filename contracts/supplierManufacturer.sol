@@ -24,7 +24,6 @@ contract supplierManufacturer is ISupplierManufacturer{
     function receiveProduct(uint _smId)external override{
         smidToStructMapping[_smId].arrivalTime = uint32(block.timestamp);
         emit eventArrivalTime(uint32(block.timestamp));
-        
     } 
     function getProduct(uint _smId) public view returns(supplierManufacturer memory){
         return smidToStructMapping[_smId];

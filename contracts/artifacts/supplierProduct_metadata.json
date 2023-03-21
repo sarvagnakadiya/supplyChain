@@ -80,6 +80,25 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_spId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "eventUpdateSupplierProductUints",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "bytes",
@@ -120,36 +139,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "addressToproductsIdMapping",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
 					}
 				],
-				"name": "deleteProduct",
+				"name": "deleteSupplierProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -282,12 +277,36 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "productsIdMappingToStructMapping",
+				"name": "supplierAddressToproductsIdMapping",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "supplierProductsIdToStructMapping",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -327,6 +346,24 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_spId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "_quantity",
+						"type": "uint128"
+					}
+				],
+				"name": "updateSupplierProductUints",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -357,19 +394,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierProduct.sol": {
-			"keccak256": "0xc4dba15508b60ff7bf51b196a3bcb3924308b128f16c5cbe0cdeb4d881e80927",
+			"keccak256": "0xa9fa9dcd46bc38fec3f38d1f37afd12c78f1cce31d5e653063c39cb543f6e56a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b12aabe48f4fa0493a26cfd33185862706d7c75c57225557eac4290419c9d78c",
-				"dweb:/ipfs/QmQKyFK4DaLUeS2BWmHhfXk6kDTkX2cZ9r8hCsxbFbtuCa"
+				"bzz-raw://638153342512dd6d139ecd034e2460b4bb1a47aed8c82ab83092e95ac4ee1259",
+				"dweb:/ipfs/QmXN5Qx75cbjQdLH8K3G84YtjUP5tc5xo74SBCMSebZLod"
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0x6098092f33d8dea1f7b230d609f75b0b28a41c6acefbb9d8486eb051f1541133",
+			"keccak256": "0xe123d9e215c493f27a6c44cf5ca4a918f090e5eb64463d55d62a352d98ed3983",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4232efebb1008e8a0d3162796829f296c523d6743031e40f78e947ccf529550a",
-				"dweb:/ipfs/QmRd3gbWNEwEPBYAducExQNw4PmB3LTDCWDapfwtX8Fqg4"
+				"bzz-raw://2e7c166a8f9251981623fc3c591ea29d1ef1f4bd5d413cd52270771666fb8d21",
+				"dweb:/ipfs/Qmej9AcJejpoR1jk3GxwFqCrURNeMFp4cqUVt9AzpfhvxV"
 			]
 		}
 	},

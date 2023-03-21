@@ -1,10 +1,60 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "_arrivalTime",
+						"type": "uint32"
+					}
+				],
+				"name": "eventArrivalTime",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_mdId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_mpId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_manufacturerAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_distributorAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "_dispatchTime",
+						"type": "uint32"
+					}
+				],
+				"name": "eventManufacturerDistributorTransfer",
+				"type": "event"
+			},
 			{
 				"inputs": [
 					{
@@ -67,7 +117,7 @@
 		"compilationTarget": {
 			"contracts/Interfaces/IManufacturerDistributor.sol": "IManufacturerDistributor"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -80,11 +130,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerDistributor.sol": {
-			"keccak256": "0xcd71e788418aa0c4f77e9694c67eb10dad07f7c1bcc3ec69b57a5b77d809defd",
+			"keccak256": "0xe5c51c96f3972a2f279083ec6511ab716558d5004eba3409b37651f347b348fd",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6c868d2712e4db59b6706b24585b7ba6a40d0aea86305f3cba3ff0e31266a04a",
-				"dweb:/ipfs/QmbsfNPLgc6w9rNjQC2YpSnZDqLc4ZwgRPt4W63fCMXkuv"
+				"bzz-raw://d6233fa8a7a12acdc371feff6252c9744383554be107aba8a015199cbc745515",
+				"dweb:/ipfs/QmdGkXTro4hUuiA15ycbkt1RgMw9TuPwZ4Db2fUDymKThb"
 			]
 		}
 	},
