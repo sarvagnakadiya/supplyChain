@@ -49,22 +49,67 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"receiveProduct(uint256,uint32)": "911a34fe",
+			"receiveProduct(uint256)": "29d78328",
 			"transferProduct(uint256,address,address,uint32,uint32)": "3f5d2e2e"
 		}
 	},
 	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "_arrivalTime",
+					"type": "uint32"
+				}
+			],
+			"name": "eventArrivalTime",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_smId",
+					"type": "uint256"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_spId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "_supplierAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "_manufacturerAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "_dispatchTime",
+					"type": "uint32"
+				}
+			],
+			"name": "eventSupplierManufacturerTransfer",
+			"type": "event"
+		},
 		{
 			"inputs": [
 				{
 					"internalType": "uint256",
 					"name": "smId",
 					"type": "uint256"
-				},
-				{
-					"internalType": "uint32",
-					"name": "_arrivalTime",
-					"type": "uint32"
 				}
 			],
 			"name": "receiveProduct",

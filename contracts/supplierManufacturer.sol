@@ -11,20 +11,19 @@ contract supplierManufacturer is ISupplierManufacturer{
     //   uint32 dispatchTime;
     //   uint32 arrivalTime;
 
-    event eventSupplierManufacturerTransfer(uint indexed _smId,uint indexed _spId, address _supplierAddress,address _manufacturerAddress,uint32 _dispatchTime,uint32 _arrivalTime);
-
     mapping(uint => supplierManufacturer) public smidToStructMapping;
     mapping(address => uint[]) public manufacturerTosmIDMapping;
     function transferProduct(uint _spId, address _supplierAddress,address _manufacturerAddress,uint32 _dispatchTime,uint32 _arrivalTime)external override{
         smidToStructMapping[smId] = supplierManufacturer(_spId,_supplierAddress,_manufacturerAddress,_dispatchTime,_arrivalTime);
         allSmId.push(smId);
         manufacturerTosmIDMapping[_manufacturerAddress].push(smId);
-        emit eventSupplierManufacturerTransfer(smId,_spId,_supplierAddress,_manufacturerAddress,_dispatchTime,_arrivalTime);
+        emit eventSupplierManufacturerTransfer(smId,_spId,_supplierAddress,_manufacturerAddress,_dispatchTime);
         smId++;
     } 
 
-    function receiveProduct(uint _smId, uint32 _arrivalTime)external override{
-        smidToStructMapping[_smId].arrivalTime = _arrivalTime;
+    function receiveProduct(uint _smId)external override{
+        smidToStructMapping[_smId].arrivalTime = uint32(block.timestamp);
+        emit eventArrivalTime(uint32(block.timestamp));
         
     } 
     function getProduct(uint _smId) public view returns(supplierManufacturer memory){
