@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -72,7 +72,7 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_dpId",
 						"type": "uint256"
 					}
 				],
@@ -150,7 +150,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_dpId",
 						"type": "uint256"
 					}
 				],
@@ -222,6 +222,11 @@
 						"internalType": "uint32",
 						"name": "dp_expiryDate",
 						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "dp_status",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -278,6 +283,11 @@
 								"internalType": "uint32",
 								"name": "dp_expiryDate",
 								"type": "uint32"
+							},
+							{
+								"internalType": "bool",
+								"name": "dp_status",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IDistributorProduct.distributorProduct[]",
@@ -305,7 +315,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_dpId",
 						"type": "uint256"
 					}
 				],
@@ -352,6 +362,11 @@
 								"internalType": "uint32",
 								"name": "dp_expiryDate",
 								"type": "uint32"
+							},
+							{
+								"internalType": "bool",
+								"name": "dp_status",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IDistributorProduct.distributorProduct",
@@ -382,13 +397,41 @@
 			}
 		],
 		"devdoc": {
+			"author": "ProvyLens team",
 			"kind": "dev",
 			"methods": {},
+			"title": "The contract for handling distributor' product",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"addDistributorProduct(address[],uint256[],bytes,bytes,uint128,uint128,uint32,uint32)": {
+					"notice": "function to add distributor product"
+				},
+				"deleteDistributorProduct(uint256)": {
+					"notice": "function to delete distributor product (making the product Inactive)"
+				},
+				"distributorAddressToproductsIdMapping(address,uint256)": {
+					"notice": "mapping user' address with all the created products"
+				},
+				"distributorProductsIdToStructMapping(uint256)": {
+					"notice": "mapping product index with distributorProduct struct"
+				},
+				"getAllProductsOfDistributor(address)": {
+					"notice": "function to get all distributor products that it created on the platform"
+				},
+				"getDistributorProductIds()": {
+					"notice": "function to return distributor product IDs"
+				},
+				"getSingleDistributorProduct(uint256)": {
+					"notice": "function to return distributor' single product"
+				},
+				"updateDistributorProductUints(uint256,uint128)": {
+					"notice": "function to update distributor product units"
+				}
+			},
+			"notice": "Uses IDistributorProduct interface",
 			"version": 1
 		}
 	},
@@ -396,7 +439,7 @@
 		"compilationTarget": {
 			"contracts/distributorProduct.sol": "distributorProduct"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -409,19 +452,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IDistributorProduct.sol": {
-			"keccak256": "0xff7a17fc59fd60d3b29107496e36b19b4867b8eff5df4a10267e7bc6cce65f9f",
+			"keccak256": "0xdf849a15011b7df041dffed560bd626846095b926a3c8cd48c2e7f8619216725",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://cff51cf61bb9d99c83ac9898fb37eec25248dd3654f8d220dce4246a0b7081f7",
-				"dweb:/ipfs/QmQNbszoCvEcdn3c83rNcXioRRwQcRYKTNvCypDGDTitCU"
+				"bzz-raw://011ed9df5761a7866c9e2832b215b76d4807b2cbcb06866802a34aeb6d1e59b3",
+				"dweb:/ipfs/QmPeXU2HNZwwgd1A6PgPaWN5Jt7BPpSbuUBkgh6dLi3kbs"
 			]
 		},
 		"contracts/distributorProduct.sol": {
-			"keccak256": "0xf47e2b8de1b947e7e30e251baa126259470431b436f8c6593bb9fede89fb6a5c",
+			"keccak256": "0xa10612356572ff080c018df21ec3b390ec2499c0392d1b4c212adbc6ed914ffc",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://344947fbe5b4f2f7e531d97f796f641065f5a159f0a6c30c4a79253de8ce6406",
-				"dweb:/ipfs/QmWtuZ4m7RgBoEgx7tGCxr5JpECoiVJijH8tVFRkCAvU5Z"
+				"bzz-raw://46fbcaba96c4970d1b7a6a2cc583bd98d0a522122c1531824a912be9a9d66d75",
+				"dweb:/ipfs/QmbsvWy7nZtFgqwymYPfzVH6ZXCGMLuDuhgpZqrfrGu46S"
 			]
 		}
 	},

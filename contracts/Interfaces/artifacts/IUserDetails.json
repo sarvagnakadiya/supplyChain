@@ -50,7 +50,7 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"addUser(uint8,bytes,bytes,bytes)": "9ae7d008",
-			"deleteUser(address)": "5c60f226",
+			"deleteUser()": "026ff05e",
 			"editImage(bytes)": "d1bab143",
 			"editName(bytes)": "0c6c92ba",
 			"editPhysicalAddress(bytes)": "6a26d064"
@@ -61,7 +61,7 @@
 			"anonymous": false,
 			"inputs": [
 				{
-					"indexed": false,
+					"indexed": true,
 					"internalType": "address",
 					"name": "_address",
 					"type": "address"
@@ -74,7 +74,7 @@
 			"anonymous": false,
 			"inputs": [
 				{
-					"indexed": false,
+					"indexed": true,
 					"internalType": "address",
 					"name": "_address",
 					"type": "address"
@@ -142,13 +142,7 @@
 			"type": "function"
 		},
 		{
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "_address",
-					"type": "address"
-				}
-			],
+			"inputs": [],
 			"name": "deleteUser",
 			"outputs": [],
 			"stateMutability": "nonpayable",

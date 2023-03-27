@@ -122,7 +122,7 @@
 				{
 					"indexed": true,
 					"internalType": "uint256",
-					"name": "_id",
+					"name": "_dpId",
 					"type": "uint256"
 				}
 			],
@@ -200,7 +200,7 @@
 			"inputs": [
 				{
 					"internalType": "uint256",
-					"name": "_id",
+					"name": "_dpId",
 					"type": "uint256"
 				}
 			],

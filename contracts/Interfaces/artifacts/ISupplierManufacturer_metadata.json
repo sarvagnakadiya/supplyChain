@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -89,11 +89,6 @@
 						"internalType": "uint32",
 						"name": "_dispatchTime",
 						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_arrivalTime",
-						"type": "uint32"
 					}
 				],
 				"name": "transferProduct",
@@ -117,7 +112,7 @@
 		"compilationTarget": {
 			"contracts/Interfaces/ISupplierManufacturer.sol": "ISupplierManufacturer"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -130,11 +125,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x02bbc82ea907909fe438af04ab3701fabcf894e538207ab7f8686f8b85ea2d03",
+			"keccak256": "0x93b2235c50c3d5dfde504a67211ff31f3a8a9c09b5d22c74d89661c7adffadbe",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://18c256da46a87285b1abf904017acc0aa118e043dc514692d431dd4ff297a341",
-				"dweb:/ipfs/Qme9k5CsJtmwDxGExSjXHQ4ZnmSxqaaSzE5rJqsec2mAh2"
+				"bzz-raw://591a0aec0f830b0cab695068b8fea3e03646178510ff5e0bbe5314e67ee99a42",
+				"dweb:/ipfs/QmeSuf1VhNmuNMAqecQtXscqv9ix4nbgPKctpyet8iVANG"
 			]
 		}
 	},

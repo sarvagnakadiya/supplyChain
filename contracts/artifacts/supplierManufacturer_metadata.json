@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -160,7 +160,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "manufacturerTosmIDMapping",
+				"name": "manufacturerTosmIdMapping",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -205,7 +205,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "smidToStructMapping",
+				"name": "smIdToStructMapping",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -257,11 +257,6 @@
 						"internalType": "uint32",
 						"name": "_dispatchTime",
 						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_arrivalTime",
-						"type": "uint32"
 					}
 				],
 				"name": "transferProduct",
@@ -271,13 +266,35 @@
 			}
 		],
 		"devdoc": {
+			"author": "ProvyLens team",
 			"kind": "dev",
 			"methods": {},
+			"title": "The contract for handling transfer between supplier and manufacturer product",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"getAllSmIdForManufacturer(address)": {
+					"notice": "function to get all trasnfers manufacturer has received"
+				},
+				"getProduct(uint256)": {
+					"notice": "function to get all transfer information"
+				},
+				"manufacturerTosmIdMapping(address,uint256)": {
+					"notice": "mapping address with all the created smIds"
+				},
+				"receiveProduct(uint256)": {
+					"notice": "function to update that the product has been received"
+				},
+				"smIdToStructMapping(uint256)": {
+					"notice": "mapping smId index with supplierManufacturer"
+				},
+				"transferProduct(uint256,address,address,uint32)": {
+					"notice": "function to transfer product from supplier to manufacturer"
+				}
+			},
+			"notice": "Uses ISupplierManufacturer interface",
 			"version": 1
 		}
 	},
@@ -285,7 +302,7 @@
 		"compilationTarget": {
 			"contracts/supplierManufacturer.sol": "supplierManufacturer"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -298,19 +315,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x02bbc82ea907909fe438af04ab3701fabcf894e538207ab7f8686f8b85ea2d03",
+			"keccak256": "0x93b2235c50c3d5dfde504a67211ff31f3a8a9c09b5d22c74d89661c7adffadbe",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://18c256da46a87285b1abf904017acc0aa118e043dc514692d431dd4ff297a341",
-				"dweb:/ipfs/Qme9k5CsJtmwDxGExSjXHQ4ZnmSxqaaSzE5rJqsec2mAh2"
+				"bzz-raw://591a0aec0f830b0cab695068b8fea3e03646178510ff5e0bbe5314e67ee99a42",
+				"dweb:/ipfs/QmeSuf1VhNmuNMAqecQtXscqv9ix4nbgPKctpyet8iVANG"
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0xb821446802466eba34f2830d9cb18751aed3850128ce0672b65f48e0e3bd73aa",
+			"keccak256": "0x37eae1bf4311c51149c143e91304a3a0e59d1949e43ea9013216d019b9c5b91d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://827a4dce8431e91c700a1d4d6422ce4c7933ddbbae7a9fd59be3e94a356d813d",
-				"dweb:/ipfs/QmUa3dUuFJYSGht7vamykPfAR7j5JtmbD4XzxuaUPYgjs6"
+				"bzz-raw://21976a67fdd7b9ff699515bb17b290090cb6b071670e2faa2c375728cd14d861",
+				"dweb:/ipfs/QmNPWspWR5AJDrXGS2c5MZYGHjKg2g5cC7GyLA7UNwqPMt"
 			]
 		}
 	},

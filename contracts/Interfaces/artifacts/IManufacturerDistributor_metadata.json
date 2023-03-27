@@ -89,11 +89,6 @@
 						"internalType": "uint32",
 						"name": "_dispatchTime",
 						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_arrivalTime",
-						"type": "uint32"
 					}
 				],
 				"name": "transferproduct",
@@ -130,11 +125,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerDistributor.sol": {
-			"keccak256": "0xe5c51c96f3972a2f279083ec6511ab716558d5004eba3409b37651f347b348fd",
+			"keccak256": "0x188d9f27ce64d85e4b86c96f4487755a298f01aaf1530d92b5ae524da0e8ee30",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d6233fa8a7a12acdc371feff6252c9744383554be107aba8a015199cbc745515",
-				"dweb:/ipfs/QmdGkXTro4hUuiA15ycbkt1RgMw9TuPwZ4Db2fUDymKThb"
+				"bzz-raw://f7734bc69cccc12c2bcb6e1aead0c09a319ea2e7f2b59f8a97443d49ef01bc0e",
+				"dweb:/ipfs/QmbdBMCRHLVawmbzBQ1Twc7Gp7f9SgH4ZR7tsw2HnPqfpY"
 			]
 		}
 	},

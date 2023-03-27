@@ -11,14 +11,15 @@ interface IManufacturerProduct {
       uint128 mp_price;
       uint32 mp_date;
       uint32 mp_expiryDate;
+      bool mp_status;
   }
   
-  event eventAddManufacturerProduct(uint indexed  _mpId,address[] indexed _supplierAddress, uint[] indexed  _smId, bytes _name,bytes _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate);
-  event eventDeleteManufacturerProduct(uint _Id);
-  event eventUpdateDistributorProductUints(uint indexed _dpId,uint128 _quantity);
+  event eventAddManufacturerProduct(uint indexed  _mpId,address[] _supplierAddress, uint[] _smId, bytes _name,bytes _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate);
+  event eventDeleteManufacturerProduct(uint _mpId);
+  event eventUpdateManufacturerProductUints(uint indexed _dpId,uint128 _quantity);
 
   function addManufacturerProduct(address[] memory _supplierAddress,uint[] memory _smId,bytes calldata _name,bytes calldata _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate)external;
-  function deleteManufacturerProduct(uint _id)external;
-  function updateDistributorProductUints(uint _dpId,uint128 _quantity) external;
+  function deleteManufacturerProduct(uint _mpId)external;
+  function updateManufacturerProductUints(uint _mpId,uint128 _quantity) external;
 
 }

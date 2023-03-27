@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -15,13 +15,13 @@
 						"type": "uint256"
 					},
 					{
-						"indexed": true,
+						"indexed": false,
 						"internalType": "address[]",
 						"name": "_supplierAddress",
 						"type": "address[]"
 					},
 					{
-						"indexed": true,
+						"indexed": false,
 						"internalType": "uint256[]",
 						"name": "_smId",
 						"type": "uint256[]"
@@ -72,7 +72,7 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "_Id",
+						"name": "_mpId",
 						"type": "uint256"
 					}
 				],
@@ -95,7 +95,7 @@
 						"type": "uint128"
 					}
 				],
-				"name": "eventUpdateDistributorProductUints",
+				"name": "eventUpdateManufacturerProductUints",
 				"type": "event"
 			},
 			{
@@ -150,7 +150,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_mpId",
 						"type": "uint256"
 					}
 				],
@@ -163,7 +163,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_dpId",
+						"name": "_mpId",
 						"type": "uint256"
 					},
 					{
@@ -172,7 +172,7 @@
 						"type": "uint128"
 					}
 				],
-				"name": "updateDistributorProductUints",
+				"name": "updateManufacturerProductUints",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -193,7 +193,7 @@
 		"compilationTarget": {
 			"contracts/Interfaces/IManufacturerProduct.sol": "IManufacturerProduct"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -206,11 +206,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerProduct.sol": {
-			"keccak256": "0x7130a7a14b28470a08a1b636a40a69a31e092d0be26a4bfaebffaa9865c825f2",
+			"keccak256": "0x3df92f8dd011da9c31f29dd2c9ede8545013d5258c98ae4f8c29559f42433ceb",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e3c0ec2810468edc2fb8603c9c17a737bb1cfe42d3590ba39b4752a47db201f4",
-				"dweb:/ipfs/QmSP28fyf9tvmSV91Ezb5aQNWBbQE7nLRPMQjkjUCFYeg7"
+				"bzz-raw://757703b8b81de1a81fef08c87c927dc019f5bd59445f920b80b4abf96312af91",
+				"dweb:/ipfs/QmfRC1eSEtkC6yxuWEFVvXGGLvHLDWWDTMxG4w836uk8pU"
 			]
 		}
 	},

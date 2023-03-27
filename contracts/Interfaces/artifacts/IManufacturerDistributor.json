@@ -50,7 +50,7 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"receiveProduct(uint256)": "29d78328",
-			"transferproduct(uint256,address,address,uint32,uint32)": "c7414bee"
+			"transferproduct(uint256,address,address,uint32)": "46dadf38"
 		}
 	},
 	"abi": [
@@ -137,11 +137,6 @@
 				{
 					"internalType": "uint32",
 					"name": "_dispatchTime",
-					"type": "uint32"
-				},
-				{
-					"internalType": "uint32",
-					"name": "_arrivalTime",
 					"type": "uint32"
 				}
 			],

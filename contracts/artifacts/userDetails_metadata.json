@@ -9,7 +9,7 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "address",
 						"name": "_address",
 						"type": "address"
@@ -22,7 +22,7 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "address",
 						"name": "_address",
 						"type": "address"
@@ -90,13 +90,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"name": "deleteUser",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -185,6 +179,11 @@
 								"internalType": "bytes",
 								"name": "userImage",
 								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "userStatus",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IUserDetails.userDetails[]",
@@ -220,6 +219,11 @@
 								"internalType": "bytes",
 								"name": "userImage",
 								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "userStatus",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IUserDetails.userDetails[]",
@@ -255,6 +259,11 @@
 								"internalType": "bytes",
 								"name": "userImage",
 								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "userStatus",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IUserDetails.userDetails[]",
@@ -290,6 +299,11 @@
 								"internalType": "bytes",
 								"name": "userImage",
 								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "userStatus",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IUserDetails.userDetails[]",
@@ -331,6 +345,11 @@
 								"internalType": "bytes",
 								"name": "userImage",
 								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "userStatus",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct IUserDetails.userDetails",
@@ -408,6 +427,11 @@
 						"internalType": "bytes",
 						"name": "userImage",
 						"type": "bytes"
+					},
+					{
+						"internalType": "bool",
+						"name": "userStatus",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -440,7 +464,44 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"addUser(uint8,bytes,bytes,bytes)": {
+					"notice": "function to add the user"
+				},
+				"deleteUser()": {
+					"notice": "Function to delete the user"
+				},
+				"editImage(bytes)": {
+					"notice": "function to edit the Image of the user"
+				},
+				"editName(bytes)": {
+					"notice": "function to edit the name of the user"
+				},
+				"editPhysicalAddress(bytes)": {
+					"notice": "function to edit the physical address of the user"
+				},
+				"getAllDistributors()": {
+					"notice": "function to return all the users registered as distributors"
+				},
+				"getAllManufacturers()": {
+					"notice": "function to return all the users registered as manufacturers"
+				},
+				"getAllSuppliers()": {
+					"notice": "function to return all the users registered as suppliers"
+				},
+				"getAllUsers()": {
+					"notice": "function to return all the users registered on provyLens"
+				},
+				"getSingleUser(address)": {
+					"notice": "function to return user details of any perticular user"
+				},
+				"userDetailsMapping(address)": {
+					"notice": "mapping address with userDetails struct"
+				},
+				"users(uint256)": {
+					"notice": "array to keep track of user' catogery"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -461,19 +522,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IUserDetails.sol": {
-			"keccak256": "0xb35917e24e3ddcaadf856dfcbeaa3d2924158e061cf54494e150a2047e65c422",
+			"keccak256": "0x3341292461d44d7534575b8c7be033e0688ed6b555bc79071f39b2e2b3fbb855",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://64717b43d412a3a70c6e888f9aa337b9b13ef82512fb9c3201989580d1a32590",
-				"dweb:/ipfs/QmeNUg6NDyxwrY9WcEqPqQpCZ3QjMXoKhM9rmPVJE6vcy2"
+				"bzz-raw://595cb991961eff351b424554db7212532719bfb7240a6a02c86e78912ac7910d",
+				"dweb:/ipfs/QmXTm27Xu6VfFWHngGy7on9ctJzAetmdRVwyKiXuHSB2R4"
 			]
 		},
 		"contracts/userDetails.sol": {
-			"keccak256": "0x0b5ff213bec18c31dd83eed2ee6445870dcda9d2b02088579cfd1afd6b2cdbf1",
+			"keccak256": "0xf7cd9dce7d54b222eeb67c2264b62a92d56299981cfe5f219dc04bf2a2c4d923",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b1350d5a0068f26aaf687b11de8fa2b3abfd02eb53e6f3f9a6b0b55de6696f6c",
-				"dweb:/ipfs/QmQxqdG4kg9dGzyLq8ZfaeM6RMVTuvhqQcZ3sJj6Mm4Phc"
+				"bzz-raw://bcb6d50c2a6fc8ea302b7b77b9f5e5486b53907c3350d95419055795f856975f",
+				"dweb:/ipfs/QmeY6nupm4PcybCTZ9avU6TNmxfLPNkd4tPkCWJVNHQXE2"
 			]
 		}
 	},

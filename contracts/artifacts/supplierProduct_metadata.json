@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -72,7 +72,7 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_spId",
 						"type": "uint256"
 					}
 				],
@@ -140,7 +140,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_spId",
 						"type": "uint256"
 					}
 				],
@@ -195,6 +195,11 @@
 								"internalType": "uint32",
 								"name": "sp_expiryDate",
 								"type": "uint32"
+							},
+							{
+								"internalType": "bool",
+								"name": "sp_status",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct ISupplierProduct.supplierProduct[]",
@@ -209,11 +214,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_spId",
 						"type": "uint256"
 					}
 				],
-				"name": "getSingleProduct",
+				"name": "getSingleSupplierProduct",
 				"outputs": [
 					{
 						"components": [
@@ -251,6 +256,11 @@
 								"internalType": "uint32",
 								"name": "sp_expiryDate",
 								"type": "uint32"
+							},
+							{
+								"internalType": "bool",
+								"name": "sp_status",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct ISupplierProduct.supplierProduct",
@@ -342,6 +352,11 @@
 						"internalType": "uint32",
 						"name": "sp_expiryDate",
 						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "sp_status",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -367,13 +382,41 @@
 			}
 		],
 		"devdoc": {
+			"author": "ProvyLens team",
 			"kind": "dev",
 			"methods": {},
+			"title": "The contract for handling supplier' product",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"addSupplierProduct(bytes,bytes,uint128,uint128,uint32,uint32)": {
+					"notice": "function to add supplier product"
+				},
+				"deleteSupplierProduct(uint256)": {
+					"notice": "function to delete supplier product (making the product Inactive)"
+				},
+				"getAllProductsOfSupplier(address)": {
+					"notice": "function to get all supplier products that it created on the platform"
+				},
+				"getSingleSupplierProduct(uint256)": {
+					"notice": "function to return supplier' single product"
+				},
+				"getSupplierProductIds()": {
+					"notice": "function to return supplier product IDs"
+				},
+				"supplierAddressToproductsIdMapping(address,uint256)": {
+					"notice": "mapping user' address with all the created products"
+				},
+				"supplierProductsIdToStructMapping(uint256)": {
+					"notice": "mapping product index with supplierProduct struct"
+				},
+				"updateSupplierProductUints(uint256,uint128)": {
+					"notice": "function to update supplier product units"
+				}
+			},
+			"notice": "Uses ISupplierProduct interface",
 			"version": 1
 		}
 	},
@@ -381,7 +424,7 @@
 		"compilationTarget": {
 			"contracts/supplierProduct.sol": "supplierProduct"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -394,19 +437,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierProduct.sol": {
-			"keccak256": "0xa9fa9dcd46bc38fec3f38d1f37afd12c78f1cce31d5e653063c39cb543f6e56a",
+			"keccak256": "0xcb23547d0e5b8c061aceac264cbd157ccea53f3e45749009b1a149b49058b9c6",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://638153342512dd6d139ecd034e2460b4bb1a47aed8c82ab83092e95ac4ee1259",
-				"dweb:/ipfs/QmXN5Qx75cbjQdLH8K3G84YtjUP5tc5xo74SBCMSebZLod"
+				"bzz-raw://f928813e20c8678aa86e572b31aa07a21cec068538f0eeb08818db6554045274",
+				"dweb:/ipfs/QmWTwsAqz4jzoEHG7tjZrxR5j4C2p3doqVW9pWZhJjiouE"
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0xe123d9e215c493f27a6c44cf5ca4a918f090e5eb64463d55d62a352d98ed3983",
+			"keccak256": "0x2c97192a6cac104347c7ffc1d1922a7696d157acf6f28fb59dc9127954e7508d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2e7c166a8f9251981623fc3c591ea29d1ef1f4bd5d413cd52270771666fb8d21",
-				"dweb:/ipfs/Qmej9AcJejpoR1jk3GxwFqCrURNeMFp4cqUVt9AzpfhvxV"
+				"bzz-raw://dde1f19780570cf4223dfaa94853e82fffd21b7ea8fdb7732feb487cbb3e7004",
+				"dweb:/ipfs/QmUZvAx4qnWUzpnMcuS6gCKyuHmLQHY4tnuqg6SdEgvk8J"
 			]
 		}
 	},

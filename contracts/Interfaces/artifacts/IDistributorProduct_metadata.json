@@ -72,7 +72,7 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_dpId",
 						"type": "uint256"
 					}
 				],
@@ -150,7 +150,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_dpId",
 						"type": "uint256"
 					}
 				],
@@ -206,11 +206,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IDistributorProduct.sol": {
-			"keccak256": "0xff7a17fc59fd60d3b29107496e36b19b4867b8eff5df4a10267e7bc6cce65f9f",
+			"keccak256": "0xdf849a15011b7df041dffed560bd626846095b926a3c8cd48c2e7f8619216725",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://cff51cf61bb9d99c83ac9898fb37eec25248dd3654f8d220dce4246a0b7081f7",
-				"dweb:/ipfs/QmQNbszoCvEcdn3c83rNcXioRRwQcRYKTNvCypDGDTitCU"
+				"bzz-raw://011ed9df5761a7866c9e2832b215b76d4807b2cbcb06866802a34aeb6d1e59b3",
+				"dweb:/ipfs/QmPeXU2HNZwwgd1A6PgPaWN5Jt7BPpSbuUBkgh6dLi3kbs"
 			]
 		}
 	},
