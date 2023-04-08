@@ -157,6 +157,72 @@
 						"type": "address"
 					}
 				],
+				"name": "getAllActiveProductsOfSupplier",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "supplierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_name",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sp_description",
+								"type": "bytes"
+							},
+							{
+								"internalType": "uint128",
+								"name": "sp_unit",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "sp_price",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint32",
+								"name": "sp_date",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "sp_expiryDate",
+								"type": "uint32"
+							},
+							{
+								"internalType": "bool",
+								"name": "sp_status",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ISupplierProduct.supplierProduct[]",
+						"name": "",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_supplierAddress",
+						"type": "address"
+					}
+				],
 				"name": "getAllProductsOfSupplier",
 				"outputs": [
 					{
@@ -205,6 +271,11 @@
 						"internalType": "struct ISupplierProduct.supplierProduct[]",
 						"name": "",
 						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_productIds",
+						"type": "uint256[]"
 					}
 				],
 				"stateMutability": "view",
@@ -397,6 +468,9 @@
 				"deleteSupplierProduct(uint256)": {
 					"notice": "function to delete supplier product (making the product Inactive)"
 				},
+				"getAllActiveProductsOfSupplier(address)": {
+					"notice": "function to get all supplier products that it created on the platform(which are currently active)"
+				},
 				"getAllProductsOfSupplier(address)": {
 					"notice": "function to get all supplier products that it created on the platform"
 				},
@@ -445,11 +519,11 @@
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0x2c97192a6cac104347c7ffc1d1922a7696d157acf6f28fb59dc9127954e7508d",
+			"keccak256": "0xf69129ca7910cd13a5d64052eb73bc5b11c495c0524619577922cf111bdb1bb7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://dde1f19780570cf4223dfaa94853e82fffd21b7ea8fdb7732feb487cbb3e7004",
-				"dweb:/ipfs/QmUZvAx4qnWUzpnMcuS6gCKyuHmLQHY4tnuqg6SdEgvk8J"
+				"bzz-raw://798d7b5e3f576b41c490936e49072e5fc185836395a8826ccd733094c6bfa13a",
+				"dweb:/ipfs/QmdVYZcyTsU6aPrbkz91PzyndNbHuHtXQQbWGpdgFupnce"
 			]
 		}
 	},
