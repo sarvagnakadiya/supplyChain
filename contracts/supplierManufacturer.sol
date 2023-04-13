@@ -85,15 +85,16 @@ contract supplierManufacturer is ISupplierManufacturer{
     function transferProduct(uint _smId,address _manufacturerAddress,uint32 _quantity,uint32 _currentQuantity)external override{
         userDetails.userDetails memory user = udInstance.getSingleUser(msg.sender);
         require(uint8(user.userType)== 0,"Only Supplier can Transfer product"); 
-        // uint256[] memory supplierAddresses = spInstance.getSpIdsByAddress();
-        // bool found = false;
-        // for (uint i = 0; i < supplierAddresses.length; i++) {
-        //     if (supplierAddresses[i] == smIdToStructMapping[_smId].spId) {
-        //         found = true;
-        //         break;
-        //     }
-        // }
-        // require(found, "Product not owned by you");
+        address caller = msg.sender;
+        uint256[] memory supplierAddresses = spInstance.getSpIdsByAddress(caller);
+        bool found = false;
+        for (uint i = 0; i < supplierAddresses.length; i++) {
+            if (supplierAddresses[i] == smIdToStructMapping[_smId].spId) {
+                found = true;
+                break;
+            }
+        }
+        require(found, "Product not owned by you");
 
         smIdToStructMapping[_smId].supplierAddress = msg.sender;
         smIdToStructMapping[_smId].dispatchTime = uint32(block.timestamp);
@@ -102,6 +103,11 @@ contract supplierManufacturer is ISupplierManufacturer{
         emit eventSupplierManufacturerTransfer(smId,smIdToStructMapping[_smId].spId,msg.sender,_manufacturerAddress,uint32(block.timestamp));
         spInstance.updateSupplierProductUints(smIdToStructMapping[_smId].spId,_quantity);
     }
+
+    // function testGet()public view returns(uint[] memory){
+    //     address caller = msg.sender;
+    //     return spInstance.getSpIdsByAddress(caller);
+    // }
 
     function requestProduct(uint _spId,uint32 _quantity, address _supplierAddress)external override {
         userDetails.userDetails memory user = udInstance.getSingleUser(msg.sender);

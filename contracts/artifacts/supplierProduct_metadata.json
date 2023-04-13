@@ -343,6 +343,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getSpIdsByAddress",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getSupplierProductIds",
 				"outputs": [
@@ -519,11 +538,11 @@
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0xf68b5d501d330eade056ff254aa0ac3bc2dfb004e0e60ac92453658e20ef5afd",
+			"keccak256": "0xd4c9ea328a4bd163e74f64c5e53e85548a677098462b508649224a557ad95d7e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a7cb75078f45b5b80746b5023ed1f5a3d68c1e78f072fc29c7765f71eec24060",
-				"dweb:/ipfs/QmWn53y6uL8tCAaAiX9J3S8BHRrH1nrhLujPHn3qbhxHiT"
+				"bzz-raw://c45906604c7c18e62f90cf00747006e3e4d4a7eade3a92e06e83701b92b98468",
+				"dweb:/ipfs/Qmaov7QXHwWcrL69Pcrq1crdmJD6w7tiQxii97wTYYjEqL"
 			]
 		}
 	},
