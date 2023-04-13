@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -236,8 +236,26 @@
 			},
 			{
 				"inputs": [],
+				"name": "getAllSupplierAddresses",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getAllSuppliers",
 				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					},
 					{
 						"components": [
 							{
@@ -509,7 +527,7 @@
 		"compilationTarget": {
 			"contracts/userDetails.sol": "userDetails"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -530,11 +548,11 @@
 			]
 		},
 		"contracts/userDetails.sol": {
-			"keccak256": "0x33212216475fe7eb289f12d2ed9a0100d4263b3780ba157fb6620cd6f9f6b3d7",
+			"keccak256": "0x69a600f3b0735f9be50cf6bac7e84e2eede75b8763e9157cbc823553a9da1e3f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8a25a2c2955e6ab6a6a3ca1e05994305d7b7b150aa8a679ec9f9195d7d97a340",
-				"dweb:/ipfs/QmavgdbNkajLLfFcyyCvkxzCyYEhezwe4y34VcvLYouXiD"
+				"bzz-raw://ff56b5a4f8acbfdb126591ba3ab51c2c43cf9a704ab16b56d64f3deda99e86d2",
+				"dweb:/ipfs/QmWDAxL71ma4gZpSFvvH16EUUgYLGZaauyhTE5GmFJU6e3"
 			]
 		}
 	},

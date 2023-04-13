@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -76,9 +76,27 @@
 						"type": "uint256"
 					},
 					{
+						"internalType": "uint32",
+						"name": "_quantity",
+						"type": "uint32"
+					},
+					{
 						"internalType": "address",
 						"name": "_supplierAddress",
 						"type": "address"
+					}
+				],
+				"name": "requestProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_spId",
+						"type": "uint256"
 					},
 					{
 						"internalType": "address",
@@ -87,7 +105,12 @@
 					},
 					{
 						"internalType": "uint32",
-						"name": "_dispatchTime",
+						"name": "_quantity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_currentQuantity",
 						"type": "uint32"
 					}
 				],
@@ -125,11 +148,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x077b7f09367a54b6e5ae8eb41fe882484ce1a2cd5c33c2a72b113123bf3f8133",
+			"keccak256": "0x8ce6d129e56dac297ada869d339f0c64decd6ab6ca64ab1487635f6daf5d6c2d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0851ec851e0a6662e981522c8f08638a93d540d978fbdc426eb001b159e3a61b",
-				"dweb:/ipfs/Qmb4xzCgE5MVXXkyrJXgsnzk4J5WRAsCW8yxmgdNth5dzo"
+				"bzz-raw://4584b7c3a80a542a3b101cf03c2c659f14ea35b371368d040839ec3527319c89",
+				"dweb:/ipfs/QmSguouEqFgnLLkAaPnSLT2nUMtCC8s9m9pjvszqwLcZ7j"
 			]
 		}
 	},

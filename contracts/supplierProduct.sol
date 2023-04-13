@@ -50,6 +50,11 @@ contract supplierProduct is ISupplierProduct{
         return supplierAddressToproductsIdMapping[msg.sender];
     }
 
+    ///
+    // function getSpIdsByAddress(address _address) public view returns(uint[] memory){
+    //     return supplierAddressToproductsIdMapping[_address];
+    // }
+
     /// @notice function to return supplier' single product
     function getSingleSupplierProduct(uint _spId) public view returns(supplierProduct memory){
         return supplierProductsIdToStructMapping[_spId];

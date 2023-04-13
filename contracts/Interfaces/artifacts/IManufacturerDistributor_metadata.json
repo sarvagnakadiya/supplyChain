@@ -76,9 +76,27 @@
 						"type": "uint256"
 					},
 					{
+						"internalType": "uint32",
+						"name": "_quantity",
+						"type": "uint32"
+					},
+					{
 						"internalType": "address",
-						"name": "_manufacturerAddress",
+						"name": "_supplierAddress",
 						"type": "address"
+					}
+				],
+				"name": "requestProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mpId",
+						"type": "uint256"
 					},
 					{
 						"internalType": "address",
@@ -87,11 +105,16 @@
 					},
 					{
 						"internalType": "uint32",
-						"name": "_dispatchTime",
+						"name": "_quantity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_currentQuantity",
 						"type": "uint32"
 					}
 				],
-				"name": "transferproduct",
+				"name": "transferProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -125,11 +148,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerDistributor.sol": {
-			"keccak256": "0x188d9f27ce64d85e4b86c96f4487755a298f01aaf1530d92b5ae524da0e8ee30",
+			"keccak256": "0xf8eb647c5621cfd9df02ddc213292493be552ea81a212f43529c7bf700b0e806",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f7734bc69cccc12c2bcb6e1aead0c09a319ea2e7f2b59f8a97443d49ef01bc0e",
-				"dweb:/ipfs/QmbdBMCRHLVawmbzBQ1Twc7Gp7f9SgH4ZR7tsw2HnPqfpY"
+				"bzz-raw://ffa3d49b4f8d05f219283d8b83c137f1f88731481d5d2dd2c8f959edf42d6556",
+				"dweb:/ipfs/QmNNqv2aqtuGP6MBSwdzLun5ytcWr8W4veWNjNXPRn79gF"
 			]
 		}
 	},

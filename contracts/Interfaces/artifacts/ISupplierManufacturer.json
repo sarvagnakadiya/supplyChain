@@ -50,7 +50,8 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"receiveProduct(uint256)": "29d78328",
-			"transferProduct(uint256,address,address,uint32)": "055498bd"
+			"requestProduct(uint256,uint32,address)": "a4ac44bf",
+			"transferProduct(uint256,address,uint32,uint32)": "b5dafe83"
 		}
 	},
 	"abi": [
@@ -125,9 +126,27 @@
 					"type": "uint256"
 				},
 				{
+					"internalType": "uint32",
+					"name": "_quantity",
+					"type": "uint32"
+				},
+				{
 					"internalType": "address",
 					"name": "_supplierAddress",
 					"type": "address"
+				}
+			],
+			"name": "requestProduct",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_spId",
+					"type": "uint256"
 				},
 				{
 					"internalType": "address",
@@ -136,7 +155,12 @@
 				},
 				{
 					"internalType": "uint32",
-					"name": "_dispatchTime",
+					"name": "_quantity",
+					"type": "uint32"
+				},
+				{
+					"internalType": "uint32",
+					"name": "_currentQuantity",
 					"type": "uint32"
 				}
 			],

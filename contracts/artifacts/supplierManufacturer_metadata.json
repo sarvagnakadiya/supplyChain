@@ -1,10 +1,26 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_spAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
 			{
 				"anonymous": false,
 				"inputs": [
@@ -59,6 +75,45 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_ownerAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_spAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeSpAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeUdAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "_manufacturerAddress",
 						"type": "address"
 					}
@@ -67,6 +122,11 @@
 				"outputs": [
 					{
 						"components": [
+							{
+								"internalType": "uint256",
+								"name": "smId",
+								"type": "uint256"
+							},
 							{
 								"internalType": "uint256",
 								"name": "spId",
@@ -91,6 +151,21 @@
 								"internalType": "uint32",
 								"name": "arrivalTime",
 								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "quantity",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "currentQuantity",
+								"type": "uint32"
+							},
+							{
+								"internalType": "enum ISupplierManufacturer.transferStatus",
+								"name": "status",
+								"type": "uint8"
 							}
 						],
 						"internalType": "struct ISupplierManufacturer.supplierManufacturer[]",
@@ -105,55 +180,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_manufacturerAddress",
+						"name": "_supplierAddress",
 						"type": "address"
 					}
 				],
-				"name": "getManufacturerRequests",
+				"name": "getAllSmIdForSupplier",
 				"outputs": [
 					{
 						"components": [
 							{
 								"internalType": "uint256",
-								"name": "spId",
+								"name": "smId",
 								"type": "uint256"
 							},
-							{
-								"internalType": "address",
-								"name": "supplierAddress",
-								"type": "address"
-							},
-							{
-								"internalType": "address",
-								"name": "manufacturerAddress",
-								"type": "address"
-							},
-							{
-								"internalType": "uint256",
-								"name": "quantity",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct ISupplierManufacturer.requestDetails[]",
-						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_smId",
-						"type": "uint256"
-					}
-				],
-				"name": "getProduct",
-				"outputs": [
-					{
-						"components": [
 							{
 								"internalType": "uint256",
 								"name": "spId",
@@ -178,11 +217,39 @@
 								"internalType": "uint32",
 								"name": "arrivalTime",
 								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "quantity",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "currentQuantity",
+								"type": "uint32"
+							},
+							{
+								"internalType": "enum ISupplierManufacturer.transferStatus",
+								"name": "status",
+								"type": "uint8"
 							}
 						],
-						"internalType": "struct ISupplierManufacturer.supplierManufacturer",
+						"internalType": "struct ISupplierManufacturer.supplierManufacturer[]",
 						"name": "",
-						"type": "tuple"
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllSupplierAddresses",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -191,15 +258,20 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_supplierAddress",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "_smId",
+						"type": "uint256"
 					}
 				],
-				"name": "getSupplierRequests",
+				"name": "getSmDetails",
 				"outputs": [
 					{
 						"components": [
+							{
+								"internalType": "uint256",
+								"name": "smId",
+								"type": "uint256"
+							},
 							{
 								"internalType": "uint256",
 								"name": "spId",
@@ -216,38 +288,34 @@
 								"type": "address"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "uint32",
+								"name": "dispatchTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "arrivalTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
 								"name": "quantity",
-								"type": "uint256"
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "currentQuantity",
+								"type": "uint32"
+							},
+							{
+								"internalType": "enum ISupplierManufacturer.transferStatus",
+								"name": "status",
+								"type": "uint8"
 							}
 						],
-						"internalType": "struct ISupplierManufacturer.requestDetails[]",
+						"internalType": "struct ISupplierManufacturer.supplierManufacturer",
 						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "manufacturerToRequestMapping",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -307,55 +375,21 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "reqIdToDetailsMapping",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "spId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "supplierAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "manufacturerAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "quantity",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
 						"name": "_spId",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_quantity",
+						"type": "uint32"
 					},
 					{
 						"internalType": "address",
 						"name": "_supplierAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_quantity",
-						"type": "uint256"
 					}
 				],
-				"name": "requestproduct",
+				"name": "requestProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -385,6 +419,11 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
+						"name": "smId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
 						"name": "spId",
 						"type": "uint256"
 					},
@@ -407,6 +446,21 @@
 						"internalType": "uint32",
 						"name": "arrivalTime",
 						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "quantity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "currentQuantity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "enum ISupplierManufacturer.transferStatus",
+						"name": "status",
+						"type": "uint8"
 					}
 				],
 				"stateMutability": "view",
@@ -425,7 +479,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "supplierToRequestMapping",
+				"name": "supplierTosmIdMapping",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -440,13 +494,8 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_spId",
+						"name": "_smId",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_supplierAddress",
-						"type": "address"
 					},
 					{
 						"internalType": "address",
@@ -455,7 +504,12 @@
 					},
 					{
 						"internalType": "uint32",
-						"name": "_dispatchTime",
+						"name": "_quantity",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_currentQuantity",
 						"type": "uint32"
 					}
 				],
@@ -466,40 +520,68 @@
 			}
 		],
 		"devdoc": {
-			"author": "ProvyLens team",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"changeOwner(address)": {
+					"params": {
+						"_ownerAddress": "The new owner's address"
+					}
+				},
+				"changeSpAddress(address)": {
+					"params": {
+						"_spAddress": "The new supplierProduct contract address"
+					}
+				},
+				"changeUdAddress(address)": {
+					"params": {
+						"_udAddress": "The new userDetails contract address"
+					}
+				},
+				"getAllSupplierAddresses()": {
+					"returns": {
+						"_0": "An array of all supplier addresses"
+					}
+				}
+			},
+			"stateVariables": {
+				"manufacturerTosmIdMapping": {
+					"details": "A mapping to associate manufacturer's address with the smId"
+				},
+				"smIdToStructMapping": {
+					"details": "A mapping to associate smId with supplierManufacturer"
+				},
+				"supplierTosmIdMapping": {
+					"details": "A mapping to associate supplier's address with the smId"
+				}
+			},
 			"title": "The contract for handling transfer between supplier and manufacturer product",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {
+				"changeOwner(address)": {
+					"notice": "Changes the contract owner"
+				},
+				"changeSpAddress(address)": {
+					"notice": "Changes the address of the supplierProduct contract"
+				},
+				"changeUdAddress(address)": {
+					"notice": "Changes the address of the userDetails contract"
+				},
 				"getAllSmIdForManufacturer(address)": {
 					"notice": "function to get all trasnfers manufacturer has received"
 				},
-				"getManufacturerRequests(address)": {
-					"notice": "funtion to get all request of  manufacturer"
+				"getAllSupplierAddresses()": {
+					"notice": "Returns an array of all supplier addresses"
 				},
-				"getProduct(uint256)": {
+				"getSmDetails(uint256)": {
 					"notice": "function to get single product transfer information"
-				},
-				"getSupplierRequests(address)": {
-					"notice": "funtion to get all request from a manufacturer"
-				},
-				"manufacturerTosmIdMapping(address,uint256)": {
-					"notice": "mapping address with all the created smIds"
 				},
 				"receiveProduct(uint256)": {
 					"notice": "function to update that the product has been received"
 				},
-				"requestproduct(uint256,address,uint256)": {
-					"notice": "function to request product from supplier"
-				},
-				"smIdToStructMapping(uint256)": {
-					"notice": "mapping smId index with supplierManufacturer"
-				},
-				"transferProduct(uint256,address,address,uint32)": {
+				"transferProduct(uint256,address,uint32,uint32)": {
 					"notice": "function to transfer product from supplier to manufacturer"
 				}
 			},
@@ -524,19 +606,51 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierManufacturer.sol": {
-			"keccak256": "0x077b7f09367a54b6e5ae8eb41fe882484ce1a2cd5c33c2a72b113123bf3f8133",
+			"keccak256": "0x8ce6d129e56dac297ada869d339f0c64decd6ab6ca64ab1487635f6daf5d6c2d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0851ec851e0a6662e981522c8f08638a93d540d978fbdc426eb001b159e3a61b",
-				"dweb:/ipfs/Qmb4xzCgE5MVXXkyrJXgsnzk4J5WRAsCW8yxmgdNth5dzo"
+				"bzz-raw://4584b7c3a80a542a3b101cf03c2c659f14ea35b371368d040839ec3527319c89",
+				"dweb:/ipfs/QmSguouEqFgnLLkAaPnSLT2nUMtCC8s9m9pjvszqwLcZ7j"
+			]
+		},
+		"contracts/Interfaces/ISupplierProduct.sol": {
+			"keccak256": "0xcb23547d0e5b8c061aceac264cbd157ccea53f3e45749009b1a149b49058b9c6",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f928813e20c8678aa86e572b31aa07a21cec068538f0eeb08818db6554045274",
+				"dweb:/ipfs/QmWTwsAqz4jzoEHG7tjZrxR5j4C2p3doqVW9pWZhJjiouE"
+			]
+		},
+		"contracts/Interfaces/IUserDetails.sol": {
+			"keccak256": "0x3341292461d44d7534575b8c7be033e0688ed6b555bc79071f39b2e2b3fbb855",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://595cb991961eff351b424554db7212532719bfb7240a6a02c86e78912ac7910d",
+				"dweb:/ipfs/QmXTm27Xu6VfFWHngGy7on9ctJzAetmdRVwyKiXuHSB2R4"
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0x0f7de29397957846db3719aaaff4255bdd7ca6fbff307edb21a3fceb6194a5b3",
+			"keccak256": "0xc811f54c61677a096a849625efb50d766ac3a908daef247b3d1d122383fae867",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9eccef5cf47b12121f4ba5d39899a76f662628f104d0b183694601ca11d9254f",
-				"dweb:/ipfs/QmNyEtwVmwgkrXwAgicaKuzohyTmJn8MEHzn1L2hfqQALj"
+				"bzz-raw://28cd190979e787cc580f74602828976ef30261a480cbe550dc5aab227070552d",
+				"dweb:/ipfs/QmbPLvgmhQt2uptanaktzPHVuTS1eo9WcrCXVSiTAf2zXQ"
+			]
+		},
+		"contracts/supplierProduct.sol": {
+			"keccak256": "0xf68b5d501d330eade056ff254aa0ac3bc2dfb004e0e60ac92453658e20ef5afd",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a7cb75078f45b5b80746b5023ed1f5a3d68c1e78f072fc29c7765f71eec24060",
+				"dweb:/ipfs/QmWn53y6uL8tCAaAiX9J3S8BHRrH1nrhLujPHn3qbhxHiT"
+			]
+		},
+		"contracts/userDetails.sol": {
+			"keccak256": "0x69a600f3b0735f9be50cf6bac7e84e2eede75b8763e9157cbc823553a9da1e3f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ff56b5a4f8acbfdb126591ba3ab51c2c43cf9a704ab16b56d64f3deda99e86d2",
+				"dweb:/ipfs/QmWDAxL71ma4gZpSFvvH16EUUgYLGZaauyhTE5GmFJU6e3"
 			]
 		}
 	},
