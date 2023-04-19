@@ -49,9 +49,9 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"receiveProduct(uint256)": "29d78328",
+			"receiveProduct(uint256,uint256)": "157e14cd",
 			"requestProduct(uint256,uint32,address)": "a4ac44bf",
-			"transferProduct(uint256,address,uint32,uint32)": "b5dafe83"
+			"transferProduct(uint256,address,uint32)": "42f14383"
 		}
 	},
 	"abi": [
@@ -109,6 +109,11 @@
 			"inputs": [
 				{
 					"internalType": "uint256",
+					"name": "_mpId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
 					"name": "_mdId",
 					"type": "uint256"
 				}
@@ -156,11 +161,6 @@
 				{
 					"internalType": "uint32",
 					"name": "_quantity",
-					"type": "uint32"
-				},
-				{
-					"internalType": "uint32",
-					"name": "_currentQuantity",
 					"type": "uint32"
 				}
 			],

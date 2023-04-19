@@ -1,10 +1,21 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
 			{
 				"anonymous": false,
 				"inputs": [
@@ -132,6 +143,32 @@
 					}
 				],
 				"name": "addSupplierProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_ownerAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeUdAddress",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -474,7 +511,18 @@
 		"devdoc": {
 			"author": "ProvyLens team",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"changeOwner(address)": {
+					"params": {
+						"_ownerAddress": "The new owner's address"
+					}
+				},
+				"changeUdAddress(address)": {
+					"params": {
+						"_udAddress": "The new userDetails contract address"
+					}
+				}
+			},
 			"title": "The contract for handling supplier' product",
 			"version": 1
 		},
@@ -483,6 +531,12 @@
 			"methods": {
 				"addSupplierProduct(bytes,bytes,uint128,uint128,uint32,uint32)": {
 					"notice": "function to add supplier product"
+				},
+				"changeOwner(address)": {
+					"notice": "Changes the contract owner"
+				},
+				"changeUdAddress(address)": {
+					"notice": "Changes the address of the userDetails contract"
 				},
 				"deleteSupplierProduct(uint256)": {
 					"notice": "function to delete supplier product (making the product Inactive)"
@@ -517,7 +571,7 @@
 		"compilationTarget": {
 			"contracts/supplierProduct.sol": "supplierProduct"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -537,12 +591,28 @@
 				"dweb:/ipfs/QmWTwsAqz4jzoEHG7tjZrxR5j4C2p3doqVW9pWZhJjiouE"
 			]
 		},
-		"contracts/supplierProduct.sol": {
-			"keccak256": "0xd4c9ea328a4bd163e74f64c5e53e85548a677098462b508649224a557ad95d7e",
+		"contracts/Interfaces/IUserDetails.sol": {
+			"keccak256": "0x3341292461d44d7534575b8c7be033e0688ed6b555bc79071f39b2e2b3fbb855",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c45906604c7c18e62f90cf00747006e3e4d4a7eade3a92e06e83701b92b98468",
-				"dweb:/ipfs/Qmaov7QXHwWcrL69Pcrq1crdmJD6w7tiQxii97wTYYjEqL"
+				"bzz-raw://595cb991961eff351b424554db7212532719bfb7240a6a02c86e78912ac7910d",
+				"dweb:/ipfs/QmXTm27Xu6VfFWHngGy7on9ctJzAetmdRVwyKiXuHSB2R4"
+			]
+		},
+		"contracts/supplierProduct.sol": {
+			"keccak256": "0x6ae8559dcb27c0c9065b1f9e83b269e9eb21b490a15efbe865c214b5ccb9ed1a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3447bc7a5e0786cf3278a111c48a676c8a75c12a19d4f9c88c204ec57cb016b2",
+				"dweb:/ipfs/QmUPqwRt7Qoy1o46Pw72C82nMeTx2JdHj8gu72JVv9U9kM"
+			]
+		},
+		"contracts/userDetails.sol": {
+			"keccak256": "0x69a600f3b0735f9be50cf6bac7e84e2eede75b8763e9157cbc823553a9da1e3f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ff56b5a4f8acbfdb126591ba3ab51c2c43cf9a704ab16b56d64f3deda99e86d2",
+				"dweb:/ipfs/QmWDAxL71ma4gZpSFvvH16EUUgYLGZaauyhTE5GmFJU6e3"
 			]
 		}
 	},

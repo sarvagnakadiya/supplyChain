@@ -51,7 +51,7 @@
 		"methodIdentifiers": {
 			"addSupplierProduct(bytes,bytes,uint128,uint128,uint32,uint32)": "ee7e7c99",
 			"deleteSupplierProduct(uint256)": "79ae0257",
-			"updateSupplierProductUints(uint256,uint128)": "f8bafa70"
+			"updateSupplierProductUints(uint256,uint128,address)": "dc1c7963"
 		}
 	},
 	"abi": [
@@ -210,6 +210,11 @@
 					"internalType": "uint128",
 					"name": "_quantity",
 					"type": "uint128"
+				},
+				{
+					"internalType": "address",
+					"name": "_caller",
+					"type": "address"
 				}
 			],
 			"name": "updateSupplierProductUints",

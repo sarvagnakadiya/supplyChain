@@ -1,8 +1,8 @@
 {
-	"id": "85319a477620dfd482c1d316aeaa8d2f",
+	"id": "d02e7fb9115efb1c12615cc7b7e44b59",
 	"_format": "hh-sol-build-info-1",
-	"solcVersion": "0.8.19",
-	"solcLongVersion": "0.8.19+commit.7dd6d404",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
 	"input": {
 		"language": "Solidity",
 		"sources": {
@@ -207,7 +207,7 @@
 							"editPhysicalAddress(bytes)": "6a26d064"
 						}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"eventDeleteUser\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enum IUserDetails.userType\",\"name\":\"_type\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"_physicalAddress\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_timeUpdated\",\"type\":\"uint256\"}],\"name\":\"eventUserData\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"enum IUserDetails.userType\",\"name\":\"_type\",\"type\":\"uint8\"},{\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_physicalAddress\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"}],\"name\":\"addUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deleteUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"}],\"name\":\"editImage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"}],\"name\":\"editName\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_physicalAddress\",\"type\":\"bytes\"}],\"name\":\"editPhysicalAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Interfaces/IUserDetails.sol\":\"IUserDetails\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Interfaces/IUserDetails.sol\":{\"keccak256\":\"0x3341292461d44d7534575b8c7be033e0688ed6b555bc79071f39b2e2b3fbb855\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://595cb991961eff351b424554db7212532719bfb7240a6a02c86e78912ac7910d\",\"dweb:/ipfs/QmXTm27Xu6VfFWHngGy7on9ctJzAetmdRVwyKiXuHSB2R4\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"eventDeleteUser\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enum IUserDetails.userType\",\"name\":\"_type\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"_physicalAddress\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_timeUpdated\",\"type\":\"uint256\"}],\"name\":\"eventUserData\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"enum IUserDetails.userType\",\"name\":\"_type\",\"type\":\"uint8\"},{\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_physicalAddress\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"}],\"name\":\"addUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deleteUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"}],\"name\":\"editImage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_name\",\"type\":\"bytes\"}],\"name\":\"editName\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_physicalAddress\",\"type\":\"bytes\"}],\"name\":\"editPhysicalAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Interfaces/IUserDetails.sol\":\"IUserDetails\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Interfaces/IUserDetails.sol\":{\"keccak256\":\"0x3341292461d44d7534575b8c7be033e0688ed6b555bc79071f39b2e2b3fbb855\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://595cb991961eff351b424554db7212532719bfb7240a6a02c86e78912ac7910d\",\"dweb:/ipfs/QmXTm27Xu6VfFWHngGy7on9ctJzAetmdRVwyKiXuHSB2R4\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -250,7 +250,6 @@
 						{
 							"abstract": false,
 							"baseContracts": [],
-							"canonicalName": "IUserDetails",
 							"contractDependencies": [],
 							"contractKind": "interface",
 							"fullyImplemented": false,
@@ -318,9 +317,6 @@
 												"pathNode": {
 													"id": 6,
 													"name": "userType",
-													"nameLocations": [
-														"208:8:0"
-													],
 													"nodeType": "IdentifierPath",
 													"referencedDeclaration": 5,
 													"src": "208:8:0"
@@ -452,7 +448,6 @@
 								},
 								{
 									"anonymous": false,
-									"eventSelector": "e49f40f57c43bcc0ea51de08718dcc45efb3325fb9d155e76c2a5ab33be2de16",
 									"id": 32,
 									"name": "eventUserData",
 									"nameLocation": "346:13:0",
@@ -512,9 +507,6 @@
 													"pathNode": {
 														"id": 20,
 														"name": "userType",
-														"nameLocations": [
-															"386:8:0"
-														],
 														"nodeType": "IdentifierPath",
 														"referencedDeclaration": 5,
 														"src": "386:8:0"
@@ -647,7 +639,6 @@
 								},
 								{
 									"anonymous": false,
-									"eventSelector": "5db32fb34ad07587763cb39a6a4e3e11627af9bb8b3754c2734c1e7c107c0b5b",
 									"id": 36,
 									"name": "eventDeleteUser",
 									"nameLocation": "484:15:0",
@@ -724,9 +715,6 @@
 													"pathNode": {
 														"id": 37,
 														"name": "userType",
-														"nameLocations": [
-															"549:8:0"
-														],
 														"nodeType": "IdentifierPath",
 														"referencedDeclaration": 5,
 														"src": "549:8:0"

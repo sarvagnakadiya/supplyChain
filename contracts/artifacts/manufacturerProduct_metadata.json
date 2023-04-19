@@ -1,10 +1,21 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
 			{
 				"anonymous": false,
 				"inputs": [
@@ -149,6 +160,32 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_ownerAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeUdAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_mpId",
 						"type": "uint256"
@@ -215,11 +252,31 @@
 								"internalType": "bool",
 								"name": "mp_status",
 								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "distributorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint32",
+								"name": "dispatchTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "arrivalTime",
+								"type": "uint32"
 							}
 						],
 						"internalType": "struct IManufacturerProduct.manufacturerProduct[]",
 						"name": "",
 						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_productIds",
+						"type": "uint256[]"
 					}
 				],
 				"stateMutability": "view",
@@ -228,6 +285,25 @@
 			{
 				"inputs": [],
 				"name": "getManufacturerProductIds",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getMpIdsByAddress",
 				"outputs": [
 					{
 						"internalType": "uint256[]",
@@ -294,6 +370,21 @@
 								"internalType": "bool",
 								"name": "mp_status",
 								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "distributorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint32",
+								"name": "dispatchTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "arrivalTime",
+								"type": "uint32"
 							}
 						],
 						"internalType": "struct IManufacturerProduct.manufacturerProduct",
@@ -372,9 +463,55 @@
 						"internalType": "bool",
 						"name": "mp_status",
 						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "dispatchTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "arrivalTime",
+						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mpId",
+						"type": "uint256"
+					}
+				],
+				"name": "updateManufactureProductReceived",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mpId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateManufactureProductTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -399,7 +536,18 @@
 		"devdoc": {
 			"author": "ProvyLens team",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"changeOwner(address)": {
+					"params": {
+						"_ownerAddress": "The new owner's address"
+					}
+				},
+				"changeUdAddress(address)": {
+					"params": {
+						"_udAddress": "The new userDetails contract address"
+					}
+				}
+			},
 			"title": "The contract for handling manufacturer' product",
 			"version": 1
 		},
@@ -408,6 +556,12 @@
 			"methods": {
 				"addManufacturerProduct(address[],uint256[],bytes,bytes,uint128,uint128,uint32,uint32)": {
 					"notice": "function to add manufacturer product"
+				},
+				"changeOwner(address)": {
+					"notice": "Changes the contract owner"
+				},
+				"changeUdAddress(address)": {
+					"notice": "Changes the address of the userDetails contract"
 				},
 				"deleteManufacturerProduct(uint256)": {
 					"notice": "function to delete manufacturer product (making the product Inactive)"
@@ -439,7 +593,7 @@
 		"compilationTarget": {
 			"contracts/manufacturerProduct.sol": "manufacturerProduct"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -452,19 +606,35 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerProduct.sol": {
-			"keccak256": "0x3df92f8dd011da9c31f29dd2c9ede8545013d5258c98ae4f8c29559f42433ceb",
+			"keccak256": "0x522d710381ec5f984786fe86c4d79d8debbeebcb6497d43f9cde3aee5bff9b89",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://757703b8b81de1a81fef08c87c927dc019f5bd59445f920b80b4abf96312af91",
-				"dweb:/ipfs/QmfRC1eSEtkC6yxuWEFVvXGGLvHLDWWDTMxG4w836uk8pU"
+				"bzz-raw://cc780701990973e7f259576f8928874d955ed015e6fc0a0954fba671fab20969",
+				"dweb:/ipfs/QmTatSyR3ccD1msCDzsk9VFbSmwKRDX7owY7Yf3e8SSYTv"
+			]
+		},
+		"contracts/Interfaces/IUserDetails.sol": {
+			"keccak256": "0x3341292461d44d7534575b8c7be033e0688ed6b555bc79071f39b2e2b3fbb855",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://595cb991961eff351b424554db7212532719bfb7240a6a02c86e78912ac7910d",
+				"dweb:/ipfs/QmXTm27Xu6VfFWHngGy7on9ctJzAetmdRVwyKiXuHSB2R4"
 			]
 		},
 		"contracts/manufacturerProduct.sol": {
-			"keccak256": "0xc638218aea8fc7b5e15d6f898d2e521de0cb91a8a3e37ef5eac7952ab39a7075",
+			"keccak256": "0x2ce59fa0d7c88b07538b6e7f53b512938a89beea0b8e65b75fb4da6528a25a1e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://caf7569843969a967a6881dd04eb9fdb73ff938927d593a6fbffb25b3e28d912",
-				"dweb:/ipfs/QmUrVxEzYzGobxKdexLYU5eZGAoWkhtEUekgmctZY6xvvz"
+				"bzz-raw://5288d28a85dc98588dc5cf32765771817f2462dab61c0a7078a6f91c2960b35b",
+				"dweb:/ipfs/QmNRy6LaSymPtGyjstZA7mhgUgRSucJxTWuZkracaYEQtX"
+			]
+		},
+		"contracts/userDetails.sol": {
+			"keccak256": "0x69a600f3b0735f9be50cf6bac7e84e2eede75b8763e9157cbc823553a9da1e3f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ff56b5a4f8acbfdb126591ba3ab51c2c43cf9a704ab16b56d64f3deda99e86d2",
+				"dweb:/ipfs/QmWDAxL71ma4gZpSFvvH16EUUgYLGZaauyhTE5GmFJU6e3"
 			]
 		}
 	},

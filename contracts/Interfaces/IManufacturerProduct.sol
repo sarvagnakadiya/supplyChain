@@ -4,7 +4,8 @@ pragma solidity >=0.8.0 <=0.8.19;
 interface IManufacturerProduct {
   struct manufacturerProduct{
       address[] supplierAddress;
-      uint[] smId;    
+      uint[] smId;   
+      address manufacturerAddress; 
       bytes mp_name;
       bytes mp_description;
       uint128 mp_unit;
@@ -12,6 +13,9 @@ interface IManufacturerProduct {
       uint32 mp_date;
       uint32 mp_expiryDate;
       bool mp_status;
+      address distributorAddress;
+      uint32 dispatchTime;
+      uint32 arrivalTime;
   }
   
   event eventAddManufacturerProduct(uint indexed  _mpId,address[] _supplierAddress, uint[] _smId, bytes _name,bytes _description,uint128 _unit,uint128 _price,uint32 _date,uint32 _expiryDate);

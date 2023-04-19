@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -160,6 +160,11 @@
 						"internalType": "uint128",
 						"name": "_quantity",
 						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
 					}
 				],
 				"name": "updateSupplierProductUints",
@@ -183,7 +188,7 @@
 		"compilationTarget": {
 			"contracts/Interfaces/ISupplierProduct.sol": "ISupplierProduct"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -196,11 +201,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierProduct.sol": {
-			"keccak256": "0xcb23547d0e5b8c061aceac264cbd157ccea53f3e45749009b1a149b49058b9c6",
+			"keccak256": "0x4f02d377b818f50e14585c45d926ba7def64639af26ddb346567176ef577342c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f928813e20c8678aa86e572b31aa07a21cec068538f0eeb08818db6554045274",
-				"dweb:/ipfs/QmWTwsAqz4jzoEHG7tjZrxR5j4C2p3doqVW9pWZhJjiouE"
+				"bzz-raw://865fef00ad9237636ba15848e245d7190bcee054b33d96d3b3e7048caf841052",
+				"dweb:/ipfs/QmUUGJUsVdaAPiWLaWH16VpJf9nTCYeUdXQUTU2DYeiFQs"
 			]
 		}
 	},

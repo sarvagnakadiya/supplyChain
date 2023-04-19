@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -10,6 +10,11 @@
 					{
 						"internalType": "address",
 						"name": "_udAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_mpAddress",
 						"type": "address"
 					}
 				],
@@ -361,7 +366,12 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_smId",
+						"name": "_mpId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_mdId",
 						"type": "uint256"
 					}
 				],
@@ -409,11 +419,6 @@
 						"internalType": "uint32",
 						"name": "_quantity",
 						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_currentQuantity",
-						"type": "uint32"
 					}
 				],
 				"name": "transferProduct",
@@ -441,10 +446,10 @@
 				"mdIdToStructMapping(uint256)": {
 					"notice": "mapping mdId index with supplierManufacturer"
 				},
-				"receiveProduct(uint256)": {
+				"receiveProduct(uint256,uint256)": {
 					"notice": "function to update that the product has been received"
 				},
-				"transferProduct(uint256,address,uint32,uint32)": {
+				"transferProduct(uint256,address,uint32)": {
 					"notice": "function to transfer product from supplier to manufacturer"
 				}
 			},
@@ -456,7 +461,7 @@
 		"compilationTarget": {
 			"contracts/manufacturerDistributor.sol": "manufacturerDistributor"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -469,19 +474,19 @@
 	},
 	"sources": {
 		"contracts/Interfaces/IManufacturerDistributor.sol": {
-			"keccak256": "0xf8eb647c5621cfd9df02ddc213292493be552ea81a212f43529c7bf700b0e806",
+			"keccak256": "0x75813ac4be109f470e0eedbadea616f9e90577ec8d0699962be25156e26025aa",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ffa3d49b4f8d05f219283d8b83c137f1f88731481d5d2dd2c8f959edf42d6556",
-				"dweb:/ipfs/QmNNqv2aqtuGP6MBSwdzLun5ytcWr8W4veWNjNXPRn79gF"
+				"bzz-raw://d08cf0ad1da62ce372f8051605eb83ead3b2b81b1ded5a4ca96652a0470d9fee",
+				"dweb:/ipfs/QmPhYBfwCegUtSsz9vZbn5DVYNvZojb4V3Qdh9rxpkP1to"
 			]
 		},
 		"contracts/Interfaces/IManufacturerProduct.sol": {
-			"keccak256": "0x3df92f8dd011da9c31f29dd2c9ede8545013d5258c98ae4f8c29559f42433ceb",
+			"keccak256": "0x522d710381ec5f984786fe86c4d79d8debbeebcb6497d43f9cde3aee5bff9b89",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://757703b8b81de1a81fef08c87c927dc019f5bd59445f920b80b4abf96312af91",
-				"dweb:/ipfs/QmfRC1eSEtkC6yxuWEFVvXGGLvHLDWWDTMxG4w836uk8pU"
+				"bzz-raw://cc780701990973e7f259576f8928874d955ed015e6fc0a0954fba671fab20969",
+				"dweb:/ipfs/QmTatSyR3ccD1msCDzsk9VFbSmwKRDX7owY7Yf3e8SSYTv"
 			]
 		},
 		"contracts/Interfaces/IUserDetails.sol": {
@@ -493,19 +498,19 @@
 			]
 		},
 		"contracts/manufacturerDistributor.sol": {
-			"keccak256": "0xe16902cb0230cfa53684c193fa3a6f5459e0e01c49ca1809152db716624b33b8",
+			"keccak256": "0x8d45edd03258b77cd5df03c07a97d22b6c03e85542c128adef6fc46148393034",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6762e43730921f74667c46d7449d4c6d700f378a7172adc9d97dbc452fcf1349",
-				"dweb:/ipfs/QmXH7YgBF87rULTzwQQfyNpSS1qcXeJBjHh5xd4eNGouBE"
+				"bzz-raw://ca6ab7cd2742ded33aa9a0b54ffc82fae248b5d16b51d7e79bc7688213f451c6",
+				"dweb:/ipfs/QmYe56FaQFvHWV5jXrYYWJiRqum7Jtnxh2GpbToNpxS8Wn"
 			]
 		},
 		"contracts/manufacturerProduct.sol": {
-			"keccak256": "0xc638218aea8fc7b5e15d6f898d2e521de0cb91a8a3e37ef5eac7952ab39a7075",
+			"keccak256": "0x2ce59fa0d7c88b07538b6e7f53b512938a89beea0b8e65b75fb4da6528a25a1e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://caf7569843969a967a6881dd04eb9fdb73ff938927d593a6fbffb25b3e28d912",
-				"dweb:/ipfs/QmUrVxEzYzGobxKdexLYU5eZGAoWkhtEUekgmctZY6xvvz"
+				"bzz-raw://5288d28a85dc98588dc5cf32765771817f2462dab61c0a7078a6f91c2960b35b",
+				"dweb:/ipfs/QmNRy6LaSymPtGyjstZA7mhgUgRSucJxTWuZkracaYEQtX"
 			]
 		},
 		"contracts/userDetails.sol": {
