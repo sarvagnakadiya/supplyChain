@@ -180,6 +180,158 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_manufacturerAddress",
+						"type": "address"
+					}
+				],
+				"name": "getAllSmIdForManufacturerWithproductDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "smId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "spId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "supplierAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "manufacturerAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint32",
+										"name": "dispatchTime",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "arrivalTime",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "quantity",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "currentQuantity",
+										"type": "uint32"
+									},
+									{
+										"internalType": "enum ISupplierManufacturer.transferStatus",
+										"name": "status",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct ISupplierManufacturer.supplierManufacturer",
+								"name": "smDetails",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "supplierAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes",
+										"name": "sp_name",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "sp_description",
+										"type": "bytes"
+									},
+									{
+										"internalType": "uint128",
+										"name": "sp_unit",
+										"type": "uint128"
+									},
+									{
+										"internalType": "uint128",
+										"name": "sp_price",
+										"type": "uint128"
+									},
+									{
+										"internalType": "uint32",
+										"name": "sp_date",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "sp_expiryDate",
+										"type": "uint32"
+									},
+									{
+										"internalType": "bool",
+										"name": "sp_status",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct ISupplierProduct.supplierProduct",
+								"name": "spDetails",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum IUserDetails.userType",
+										"name": "userType",
+										"type": "uint8"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userName",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userPhysicalAddress",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userImage",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bool",
+										"name": "userStatus",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct IUserDetails.userDetails",
+								"name": "uDetails",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct supplierManufacturer.supplierManufacturerWithProduct[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "_supplierAddress",
 						"type": "address"
 					}
@@ -235,6 +387,310 @@
 							}
 						],
 						"internalType": "struct ISupplierManufacturer.supplierManufacturer[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_supplierAddress",
+						"type": "address"
+					}
+				],
+				"name": "getAllSmIdForSupplierWithproductDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "smId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "spId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "supplierAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "manufacturerAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint32",
+										"name": "dispatchTime",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "arrivalTime",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "quantity",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "currentQuantity",
+										"type": "uint32"
+									},
+									{
+										"internalType": "enum ISupplierManufacturer.transferStatus",
+										"name": "status",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct ISupplierManufacturer.supplierManufacturer",
+								"name": "smDetails",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "supplierAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes",
+										"name": "sp_name",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "sp_description",
+										"type": "bytes"
+									},
+									{
+										"internalType": "uint128",
+										"name": "sp_unit",
+										"type": "uint128"
+									},
+									{
+										"internalType": "uint128",
+										"name": "sp_price",
+										"type": "uint128"
+									},
+									{
+										"internalType": "uint32",
+										"name": "sp_date",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "sp_expiryDate",
+										"type": "uint32"
+									},
+									{
+										"internalType": "bool",
+										"name": "sp_status",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct ISupplierProduct.supplierProduct",
+								"name": "spDetails",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum IUserDetails.userType",
+										"name": "userType",
+										"type": "uint8"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userName",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userPhysicalAddress",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userImage",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bool",
+										"name": "userStatus",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct IUserDetails.userDetails",
+								"name": "uDetails",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct supplierManufacturer.supplierManufacturerWithProduct[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "_smIdData",
+						"type": "uint256[]"
+					}
+				],
+				"name": "getAllSmIdForSupplierWithproductDetailsWithId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "smId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "spId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "address",
+										"name": "supplierAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "manufacturerAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint32",
+										"name": "dispatchTime",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "arrivalTime",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "quantity",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "currentQuantity",
+										"type": "uint32"
+									},
+									{
+										"internalType": "enum ISupplierManufacturer.transferStatus",
+										"name": "status",
+										"type": "uint8"
+									}
+								],
+								"internalType": "struct ISupplierManufacturer.supplierManufacturer",
+								"name": "smDetails",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "supplierAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "bytes",
+										"name": "sp_name",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "sp_description",
+										"type": "bytes"
+									},
+									{
+										"internalType": "uint128",
+										"name": "sp_unit",
+										"type": "uint128"
+									},
+									{
+										"internalType": "uint128",
+										"name": "sp_price",
+										"type": "uint128"
+									},
+									{
+										"internalType": "uint32",
+										"name": "sp_date",
+										"type": "uint32"
+									},
+									{
+										"internalType": "uint32",
+										"name": "sp_expiryDate",
+										"type": "uint32"
+									},
+									{
+										"internalType": "bool",
+										"name": "sp_status",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct ISupplierProduct.supplierProduct",
+								"name": "spDetails",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "enum IUserDetails.userType",
+										"name": "userType",
+										"type": "uint8"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userName",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userPhysicalAddress",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bytes",
+										"name": "userImage",
+										"type": "bytes"
+									},
+									{
+										"internalType": "bool",
+										"name": "userStatus",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct IUserDetails.userDetails",
+								"name": "uDetails",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct supplierManufacturer.supplierManufacturerWithProduct[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -614,11 +1070,11 @@
 			]
 		},
 		"contracts/Interfaces/ISupplierProduct.sol": {
-			"keccak256": "0xcb23547d0e5b8c061aceac264cbd157ccea53f3e45749009b1a149b49058b9c6",
+			"keccak256": "0x4f02d377b818f50e14585c45d926ba7def64639af26ddb346567176ef577342c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f928813e20c8678aa86e572b31aa07a21cec068538f0eeb08818db6554045274",
-				"dweb:/ipfs/QmWTwsAqz4jzoEHG7tjZrxR5j4C2p3doqVW9pWZhJjiouE"
+				"bzz-raw://865fef00ad9237636ba15848e245d7190bcee054b33d96d3b3e7048caf841052",
+				"dweb:/ipfs/QmUUGJUsVdaAPiWLaWH16VpJf9nTCYeUdXQUTU2DYeiFQs"
 			]
 		},
 		"contracts/Interfaces/IUserDetails.sol": {
@@ -630,19 +1086,19 @@
 			]
 		},
 		"contracts/supplierManufacturer.sol": {
-			"keccak256": "0xd923b4e86c61e506a34f59f6d0785615ba4fe21ef41ebc78f367522c3dad64d9",
+			"keccak256": "0xd530e675f092ce83e177a5660f8a5a03e32f30e0f2d5858318cb555c134ecfb5",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3739fce34188a97a5a44afb714a5378c61166f62c569ce1fa26edebf7760d999",
-				"dweb:/ipfs/QmQGBFyjaTtDU9NVjTnDj5zWWiGGqwr4V1GtGtaJngFCL4"
+				"bzz-raw://a3cfd6a4221bca94a882cb9e44ee577a975023ec9aa491cbb4ab6e502e2d781a",
+				"dweb:/ipfs/QmW3BajNdNbUg4w4iFYyd7wKDdAUZsnFgtok9FYvWB3vKf"
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0x6ae8559dcb27c0c9065b1f9e83b269e9eb21b490a15efbe865c214b5ccb9ed1a",
+			"keccak256": "0xc0d277762c198e2bbea60b16ded9cad167fedcd650aa0b433028a66c25fde3ac",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3447bc7a5e0786cf3278a111c48a676c8a75c12a19d4f9c88c204ec57cb016b2",
-				"dweb:/ipfs/QmUPqwRt7Qoy1o46Pw72C82nMeTx2JdHj8gu72JVv9U9kM"
+				"bzz-raw://c7d2069231b9dda5c232592dafe3b016ebd117e23f21db47b0a223a256179602",
+				"dweb:/ipfs/QmRS8Pw4cS9RDZa7tdi7naE3XMrPxXgrQBKcDv9S2tRno3"
 			]
 		},
 		"contracts/userDetails.sol": {

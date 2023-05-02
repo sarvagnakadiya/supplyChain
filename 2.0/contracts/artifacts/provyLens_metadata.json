@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"2.0/contracts/provyLens.sol": "provyLens"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"2.0/contracts/provyLens.sol": {
+			"keccak256": "0xb0249162ddcf2454cebc9e06440c3ed9d07be49f5137b06d3bf600af4554568c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4296c987e6b5d0a8e4f03528b4b9d83c7d04f0a1446b8993d2a7fdcc93be98e0",
+				"dweb:/ipfs/QmRiMF7NhEBJhJRSPBcJraLhBD9Hyqnd7UizpBjrNQoACA"
+			]
+		}
+	},
+	"version": 1
+}

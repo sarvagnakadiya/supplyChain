@@ -500,6 +500,11 @@
 						"internalType": "uint128",
 						"name": "_quantity",
 						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "_supplierAddress",
+						"type": "address"
 					}
 				],
 				"name": "updateSupplierProductUints",
@@ -559,7 +564,7 @@
 				"supplierProductsIdToStructMapping(uint256)": {
 					"notice": "mapping product index with supplierProduct struct"
 				},
-				"updateSupplierProductUints(uint256,uint128)": {
+				"updateSupplierProductUints(uint256,uint128,address)": {
 					"notice": "function to update supplier product units"
 				}
 			},
@@ -584,11 +589,11 @@
 	},
 	"sources": {
 		"contracts/Interfaces/ISupplierProduct.sol": {
-			"keccak256": "0xcb23547d0e5b8c061aceac264cbd157ccea53f3e45749009b1a149b49058b9c6",
+			"keccak256": "0x4f02d377b818f50e14585c45d926ba7def64639af26ddb346567176ef577342c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f928813e20c8678aa86e572b31aa07a21cec068538f0eeb08818db6554045274",
-				"dweb:/ipfs/QmWTwsAqz4jzoEHG7tjZrxR5j4C2p3doqVW9pWZhJjiouE"
+				"bzz-raw://865fef00ad9237636ba15848e245d7190bcee054b33d96d3b3e7048caf841052",
+				"dweb:/ipfs/QmUUGJUsVdaAPiWLaWH16VpJf9nTCYeUdXQUTU2DYeiFQs"
 			]
 		},
 		"contracts/Interfaces/IUserDetails.sol": {
@@ -600,11 +605,11 @@
 			]
 		},
 		"contracts/supplierProduct.sol": {
-			"keccak256": "0x6ae8559dcb27c0c9065b1f9e83b269e9eb21b490a15efbe865c214b5ccb9ed1a",
+			"keccak256": "0xc0d277762c198e2bbea60b16ded9cad167fedcd650aa0b433028a66c25fde3ac",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3447bc7a5e0786cf3278a111c48a676c8a75c12a19d4f9c88c204ec57cb016b2",
-				"dweb:/ipfs/QmUPqwRt7Qoy1o46Pw72C82nMeTx2JdHj8gu72JVv9U9kM"
+				"bzz-raw://c7d2069231b9dda5c232592dafe3b016ebd117e23f21db47b0a223a256179602",
+				"dweb:/ipfs/QmRS8Pw4cS9RDZa7tdi7naE3XMrPxXgrQBKcDv9S2tRno3"
 			]
 		},
 		"contracts/userDetails.sol": {

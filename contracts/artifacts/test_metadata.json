@@ -26,6 +26,67 @@
 			{
 				"inputs": [
 					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "bytesToUint256",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkSize",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "flag",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getSizeOfVariable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "str",
 						"type": "string"
@@ -71,10 +132,10 @@
 	},
 	"sources": {
 		"contracts/testing.sol": {
-			"keccak256": "0xaf19b014e62a8a82af3379e634f227edc10278840e8150db0aeeb37c5e965fe7",
+			"keccak256": "0xd40efda31c5e991d10ffe7aaa15792f17d6b84f3ce01f28b60e749275fc4fdcf",
 			"urls": [
-				"bzz-raw://9e32f6057085acd499c2022075d78cbac463211a06e9187b5df845796eec4529",
-				"dweb:/ipfs/QmdAstW4Y9AFk31rKqq4qzPsQVD7h1D5VoMwFUELbh4dzi"
+				"bzz-raw://fd3017dc6d00108fd4d510407c7df0a9a0e3e9e9eff9aaa3d8da6e064544afba",
+				"dweb:/ipfs/QmRhGM577xa5rMCV8wtaVtN4Lk5e4xxAER8cAcYq7ACkFQ"
 			]
 		}
 	},
